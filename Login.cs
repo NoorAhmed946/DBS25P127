@@ -14,7 +14,9 @@ namespace DBS25P127
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            DashBoard dashBoard = new DashBoard();
+            dashBoard.Show();
+            this.Hide(); 
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -22,6 +24,23 @@ namespace DBS25P127
             Signin form2 = new Signin();
             form2.Show();
             this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            ForgotPassword forgotPassword = new ForgotPassword();
+            forgotPassword.Show();
+            this.Hide();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

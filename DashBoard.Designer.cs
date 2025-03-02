@@ -49,16 +49,20 @@
             // 
             // label3
             // 
+            label3.BackColor = Color.Black;
             label3.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ButtonShadow;
             label3.Location = new Point(83, 9);
             label3.Name = "label3";
-            label3.Size = new Size(616, 60);
+            label3.Size = new Size(616, 52);
             label3.TabIndex = 7;
             label3.Text = "Faculty Workload and Resource Allocation System";
             label3.TextAlign = ContentAlignment.MiddleCenter;
+            label3.Click += label3_Click;
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = SystemColors.ControlDarkDark;
             pictureBox1.Image = Properties.Resources.knowledge;
             pictureBox1.Location = new Point(110, 94);
             pictureBox1.Name = "pictureBox1";
@@ -69,6 +73,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = SystemColors.ControlDarkDark;
             pictureBox2.Image = Properties.Resources.execution;
             pictureBox2.Location = new Point(319, 94);
             pictureBox2.Name = "pictureBox2";
@@ -79,6 +84,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = SystemColors.ControlDarkDark;
             pictureBox3.Image = Properties.Resources.classroom;
             pictureBox3.Location = new Point(527, 94);
             pictureBox3.Name = "pictureBox3";
@@ -89,6 +95,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.BackColor = SystemColors.ControlDarkDark;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(225, 280);
             pictureBox4.Name = "pictureBox4";
@@ -99,6 +106,7 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.BackColor = SystemColors.ControlDarkDark;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.Location = new Point(461, 280);
             pictureBox5.Name = "pictureBox5";
@@ -109,53 +117,66 @@
             // 
             // button1
             // 
+            button1.BackColor = SystemColors.Desktop;
+            button1.ForeColor = SystemColors.ButtonShadow;
             button1.Location = new Point(110, 220);
             button1.Name = "button1";
             button1.Size = new Size(148, 23);
             button1.TabIndex = 18;
             button1.Text = "Faculty Management ";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.BackColor = SystemColors.ActiveCaptionText;
+            button2.ForeColor = SystemColors.ButtonShadow;
             button2.Location = new Point(319, 211);
             button2.Name = "button2";
             button2.Size = new Size(150, 43);
             button2.TabIndex = 19;
             button2.Text = "Course and Workload Assignment";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
+            button3.BackColor = SystemColors.ActiveCaptionText;
+            button3.ForeColor = SystemColors.ButtonShadow;
             button3.Location = new Point(527, 212);
             button3.Name = "button3";
             button3.Size = new Size(148, 42);
             button3.TabIndex = 20;
             button3.Text = " Resource and Classroom Management";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
+            button4.BackColor = SystemColors.ActiveCaptionText;
+            button4.ForeColor = SystemColors.ButtonShadow;
             button4.Location = new Point(225, 398);
             button4.Name = "button4";
             button4.Size = new Size(152, 40);
             button4.TabIndex = 21;
             button4.Text = "Faculty Requests Management";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
+            button5.BackColor = SystemColors.ActiveCaptionText;
+            button5.ForeColor = SystemColors.ButtonShadow;
             button5.Location = new Point(461, 398);
             button5.Name = "button5";
             button5.Size = new Size(151, 30);
             button5.TabIndex = 22;
             button5.Text = "Reports and Approvals";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             // 
             // DashBoard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -170,6 +191,7 @@
             Controls.Add(label3);
             Name = "DashBoard";
             Text = "DashBoard";
+            Load += DashBoard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

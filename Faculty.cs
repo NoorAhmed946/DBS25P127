@@ -26,5 +26,12 @@ namespace DBS25P127
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DashBoard dashBoard = new DashBoard();
+            dashBoard.Show();
+            this.Hide();
+        }
     }
 }

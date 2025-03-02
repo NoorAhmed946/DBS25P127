@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Faculty));
             label1 = new Label();
             panel1 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
             dataGridView1 = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
@@ -43,14 +44,17 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
+            button4 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
+            label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(240, 9);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(460, 27);
             label1.Name = "label1";
             label1.Size = new Size(483, 46);
             label1.TabIndex = 0;
@@ -59,40 +63,47 @@
             // 
             // panel1
             // 
+            panel1.BackColor = SystemColors.WindowFrame;
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(171, 451);
+            panel1.Size = new Size(171, 459);
             panel1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(32, 93);
-            button1.Name = "button1";
-            button1.Size = new Size(93, 60);
-            button1.TabIndex = 0;
-            button1.Text = "Add Faculty";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(32, 183);
-            button2.Name = "button2";
-            button2.Size = new Size(93, 59);
-            button2.TabIndex = 1;
-            button2.Text = "Update";
-            button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
+            button3.BackColor = SystemColors.ActiveCaptionText;
+            button3.ForeColor = SystemColors.ButtonHighlight;
             button3.Location = new Point(32, 276);
             button3.Name = "button3";
             button3.Size = new Size(93, 64);
             button3.TabIndex = 2;
             button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.ActiveCaptionText;
+            button2.ForeColor = SystemColors.ButtonHighlight;
+            button2.Location = new Point(32, 183);
+            button2.Name = "button2";
+            button2.Size = new Size(93, 59);
+            button2.TabIndex = 1;
+            button2.Text = "Update";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ActiveCaptionText;
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(32, 93);
+            button1.Name = "button1";
+            button1.Size = new Size(93, 60);
+            button1.TabIndex = 0;
+            button1.Text = "Add Faculty";
+            button1.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -100,7 +111,7 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Column1, Column6, Column7, Column8, Column2, Column3, Column4, Column5 });
             dataGridView1.Location = new Point(220, 109);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(555, 257);
+            dataGridView1.Size = new Size(946, 257);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -149,11 +160,26 @@
             Column5.HeaderText = "Assigned Role ";
             Column5.Name = "Column5";
             // 
+            // button4
+            // 
+            button4.BackColor = SystemColors.Desktop;
+            button4.ForeColor = SystemColors.ButtonHighlight;
+            button4.Location = new Point(220, 44);
+            button4.Name = "button4";
+            button4.Size = new Size(53, 23);
+            button4.TabIndex = 3;
+            button4.Text = "Back";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // Faculty
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1318, 582);
+            Controls.Add(button4);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -182,5 +208,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private Button button4;
     }
 }
