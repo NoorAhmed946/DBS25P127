@@ -137,6 +137,7 @@
             button2.TabIndex = 19;
             button2.Text = "Course and Workload Assignment";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -148,6 +149,7 @@
             button3.TabIndex = 20;
             button3.Text = " Resource and Classroom Management";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -159,6 +161,7 @@
             button4.TabIndex = 21;
             button4.Text = "Faculty Requests Management";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -170,6 +173,7 @@
             button5.TabIndex = 22;
             button5.Text = "Reports and Approvals";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // DashBoard
             // 

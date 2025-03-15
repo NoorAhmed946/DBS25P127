@@ -38,5 +38,31 @@ namespace DBS25P127
             faculty.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CourseMain courseMain = new CourseMain();
+            courseMain.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FacultyReqMan facultyReqMan = new FacultyReqMan();
+            facultyReqMan.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ResourceandClassroom resourceandClassroom = new ResourceandClassroom();
+            resourceandClassroom.Show();
+            this.Hide();
+        }
     }
 }

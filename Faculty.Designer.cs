@@ -63,7 +63,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.WindowFrame;
+            panel1.BackColor = SystemColors.ControlDark;
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
@@ -111,6 +111,7 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Column1, Column6, Column7, Column8, Column2, Column3, Column4, Column5 });
             dataGridView1.Location = new Point(220, 109);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(946, 257);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -119,46 +120,55 @@
             // 
             ID.HeaderText = "Faculty ID";
             ID.Name = "ID";
+            ID.ReadOnly = true;
             // 
             // Column1
             // 
             Column1.HeaderText = "Name";
             Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // Column6
             // 
             Column6.HeaderText = "Email";
             Column6.Name = "Column6";
+            Column6.ReadOnly = true;
             // 
             // Column7
             // 
             Column7.HeaderText = "Contact";
             Column7.Name = "Column7";
+            Column7.ReadOnly = true;
             // 
             // Column8
             // 
             Column8.HeaderText = "Designation";
             Column8.Name = "Column8";
+            Column8.ReadOnly = true;
             // 
             // Column2
             // 
             Column2.HeaderText = "Reasearch Area";
             Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // Column3
             // 
             Column3.HeaderText = "Teaching Hours";
             Column3.Name = "Column3";
+            Column3.ReadOnly = true;
             // 
             // Column4
             // 
             Column4.HeaderText = "UserID";
             Column4.Name = "Column4";
+            Column4.ReadOnly = true;
             // 
             // Column5
             // 
             Column5.HeaderText = "Assigned Role ";
             Column5.Name = "Column5";
+            Column5.ReadOnly = true;
             // 
             // button4
             // 
