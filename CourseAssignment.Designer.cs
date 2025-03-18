@@ -150,7 +150,7 @@
             // 
             button2.BackColor = SystemColors.Desktop;
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(210, 23);
+            button2.Location = new Point(231, 24);
             button2.Name = "button2";
             button2.Size = new Size(53, 26);
             button2.TabIndex = 19;

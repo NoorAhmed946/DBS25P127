@@ -1,6 +1,6 @@
 ﻿namespace DBS25P127
 {
-    partial class FacultyAdminRoles
+    partial class Cosumables
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacultyAdminRoles));
+            Button button4;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cosumables));
             label1 = new Label();
             panel1 = new Panel();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            button4 = new Button();
-            comboBox1 = new ComboBox();
             label2 = new Label();
-            label3 = new Label();
             textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            label4 = new Label();
-            comboBox2 = new ComboBox();
+            button4 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -55,29 +50,41 @@
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(201, 1);
+            label1.Location = new Point(70, 9);
             label1.Name = "label1";
-            label1.Size = new Size(839, 46);
-            label1.TabIndex = 5;
-            label1.Text = " Faculty Roles";
+            label1.Size = new Size(855, 46);
+            label1.TabIndex = 15;
+            label1.Text = "Projects";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ScrollBar;
+            panel1.BackColor = Color.LightGray;
+            panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(1, 1);
+            panel1.Location = new Point(1, 9);
             panel1.Name = "panel1";
-            panel1.Size = new Size(214, 483);
-            panel1.TabIndex = 15;
+            panel1.Size = new Size(214, 469);
+            panel1.TabIndex = 21;
+            // 
+            // button4
+            // 
+            button4.BackColor = SystemColors.ActiveCaptionText;
+            button4.ForeColor = SystemColors.ButtonHighlight;
+            button4.Location = new Point(56, 290);
+            button4.Name = "button4";
+            button4.Size = new Size(93, 64);
+            button4.TabIndex = 3;
+            button4.Text = "Delete";
+            button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
             button3.BackColor = SystemColors.ActiveCaptionText;
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(56, 283);
+            button3.Location = new Point(56, 220);
             button3.Name = "button3";
             button3.Size = new Size(93, 64);
             button3.TabIndex = 2;
@@ -88,7 +95,7 @@
             // 
             button2.BackColor = SystemColors.ActiveCaptionText;
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(56, 190);
+            button2.Location = new Point(56, 155);
             button2.Name = "button2";
             button2.Size = new Size(93, 59);
             button2.TabIndex = 1;
@@ -103,132 +110,60 @@
             button1.Name = "button1";
             button1.Size = new Size(93, 60);
             button1.TabIndex = 0;
-            button1.Text = "Assign";
+            button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = SystemColors.Desktop;
-            button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(257, 18);
-            button4.Name = "button4";
-            button4.Size = new Size(53, 23);
-            button4.TabIndex = 16;
-            button4.Text = "Back";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = SystemColors.MenuText;
-            comboBox1.ForeColor = SystemColors.ScrollBar;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Department Head", "Faculty Members", "Administrative Staff" });
-            comboBox1.Location = new Point(408, 168);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(260, 23);
-            comboBox1.TabIndex = 17;
-            comboBox1.Text = "Select Role";
             // 
             // label2
             // 
             label2.BackColor = SystemColors.Desktop;
             label2.ForeColor = SystemColors.ButtonShadow;
-            label2.Location = new Point(408, 143);
+            label2.Location = new Point(345, 98);
             label2.Name = "label2";
             label2.Size = new Size(92, 22);
-            label2.TabIndex = 18;
-            label2.Text = "Faculty Name";
+            label2.TabIndex = 22;
+            label2.Text = "Item Name";
             label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            label3.BackColor = SystemColors.Desktop;
-            label3.ForeColor = SystemColors.ButtonShadow;
-            label3.Location = new Point(757, 143);
-            label3.Name = "label3";
-            label3.Size = new Size(92, 22);
-            label3.TabIndex = 19;
-            label3.Text = "Role ";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(757, 168);
+            textBox1.Location = new Point(345, 123);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(223, 23);
-            textBox1.TabIndex = 20;
+            textBox1.Size = new Size(246, 23);
+            textBox1.TabIndex = 23;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new Point(449, 317);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
+            dataGridView1.Location = new Point(440, 186);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(445, 150);
-            dataGridView1.TabIndex = 21;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.Size = new Size(239, 150);
+            dataGridView1.TabIndex = 24;
             // 
             // Column1
             // 
-            Column1.HeaderText = "Admin Role id";
+            Column1.HeaderText = "Item id";
             Column1.Name = "Column1";
             // 
             // Column2
             // 
-            Column2.HeaderText = "Faculty ";
+            Column2.HeaderText = "Item Name";
             Column2.Name = "Column2";
             // 
-            // Column3
-            // 
-            Column3.HeaderText = "Role Name";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Semester";
-            Column4.Name = "Column4";
-            // 
-            // label4
-            // 
-            label4.BackColor = SystemColors.Desktop;
-            label4.ForeColor = SystemColors.ButtonShadow;
-            label4.Location = new Point(408, 209);
-            label4.Name = "label4";
-            label4.Size = new Size(92, 22);
-            label4.TabIndex = 22;
-            label4.Text = "Semester";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // comboBox2
-            // 
-            comboBox2.BackColor = SystemColors.MenuText;
-            comboBox2.ForeColor = SystemColors.ScrollBar;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(408, 234);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(260, 23);
-            comboBox2.TabIndex = 23;
-            comboBox2.Text = "Select Semester";
-            // 
-            // FacultyAdminRoles
+            // Cosumables
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1052, 479);
-            Controls.Add(comboBox2);
-            Controls.Add(label4);
+            ClientSize = new Size(925, 450);
             Controls.Add(dataGridView1);
             Controls.Add(textBox1);
-            Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(comboBox1);
-            Controls.Add(button4);
             Controls.Add(panel1);
             Controls.Add(label1);
-            Name = "FacultyAdminRoles";
-            Text = "FacultyAdminRoles";
+            Name = "Cosumables";
+            Text = "Cosumables";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -242,17 +177,10 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private Button button4;
-        private ComboBox comboBox1;
         private Label label2;
-        private Label label3;
         private TextBox textBox1;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private Label label4;
-        private ComboBox comboBox2;
     }
 }

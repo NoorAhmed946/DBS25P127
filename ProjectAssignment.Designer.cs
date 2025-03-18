@@ -40,9 +40,9 @@
             label3 = new Label();
             label4 = new Label();
             numericUpDown1 = new NumericUpDown();
-            textBox1 = new TextBox();
+            comboBox2 = new ComboBox();
             label5 = new Label();
-            textBox2 = new TextBox();
+            comboBox3 = new ComboBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
@@ -64,7 +64,7 @@
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(0, 9);
+            label1.Location = new Point(0, -3);
             label1.Name = "label1";
             label1.Size = new Size(1129, 46);
             label1.TabIndex = 4;
@@ -77,7 +77,7 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(0, 9);
+            panel1.Location = new Point(0, -2);
             panel1.Name = "panel1";
             panel1.Size = new Size(214, 469);
             panel1.TabIndex = 14;
@@ -119,7 +119,7 @@
             // 
             button4.BackColor = SystemColors.Desktop;
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(262, 63);
+            button4.Location = new Point(256, 12);
             button4.Name = "button4";
             button4.Size = new Size(53, 23);
             button4.TabIndex = 15;
@@ -129,14 +129,14 @@
             // comboBox1
             // 
             comboBox1.BackColor = SystemColors.MenuText;
+            comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
             comboBox1.ForeColor = SystemColors.ScrollBar;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Department Head", "Faculty Members", "Administrative Staff" });
             comboBox1.Location = new Point(346, 164);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(260, 23);
+            comboBox1.Size = new Size(260, 24);
             comboBox1.TabIndex = 16;
-            comboBox1.Text = "Select Role";
+            comboBox1.Text = "Select Faculty";
             // 
             // label3
             // 
@@ -153,7 +153,7 @@
             // 
             label4.BackColor = SystemColors.Desktop;
             label4.ForeColor = SystemColors.ButtonShadow;
-            label4.Location = new Point(695, 210);
+            label4.Location = new Point(695, 217);
             label4.Name = "label4";
             label4.Size = new Size(128, 22);
             label4.TabIndex = 19;
@@ -162,35 +162,45 @@
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(695, 235);
+            numericUpDown1.Location = new Point(695, 242);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(237, 23);
             numericUpDown1.TabIndex = 20;
             // 
-            // textBox1
+            // comboBox2
             // 
-            textBox1.Location = new Point(695, 164);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(237, 23);
-            textBox1.TabIndex = 21;
+            comboBox2.BackColor = SystemColors.MenuText;
+            comboBox2.DrawMode = DrawMode.OwnerDrawFixed;
+            comboBox2.ForeColor = SystemColors.ScrollBar;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(695, 164);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(260, 24);
+            comboBox2.TabIndex = 21;
+            comboBox2.Text = "Select Title";
             // 
             // label5
             // 
             label5.BackColor = SystemColors.Desktop;
             label5.ForeColor = SystemColors.ButtonShadow;
-            label5.Location = new Point(346, 210);
+            label5.Location = new Point(346, 217);
             label5.Name = "label5";
             label5.Size = new Size(92, 22);
             label5.TabIndex = 22;
-            label5.Text = "Student Name";
+            label5.Text = "Semester";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // comboBox3
             // 
-            textBox2.Location = new Point(346, 235);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(260, 23);
-            textBox2.TabIndex = 23;
+            comboBox3.BackColor = SystemColors.MenuText;
+            comboBox3.DrawMode = DrawMode.OwnerDrawFixed;
+            comboBox3.ForeColor = SystemColors.ScrollBar;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(346, 242);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(260, 24);
+            comboBox3.TabIndex = 23;
+            comboBox3.Text = "Select Semester";
             // 
             // ProjectAssignment
             // 
@@ -199,9 +209,9 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1036, 479);
-            Controls.Add(textBox2);
+            Controls.Add(comboBox3);
             Controls.Add(label5);
-            Controls.Add(textBox1);
+            Controls.Add(comboBox2);
             Controls.Add(numericUpDown1);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -216,7 +226,6 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -232,8 +241,8 @@
         private Label label3;
         private Label label4;
         private NumericUpDown numericUpDown1;
-        private TextBox textBox1;
+        private ComboBox comboBox2;
         private Label label5;
-        private TextBox textBox2;
+        private ComboBox comboBox3;
     }
 }

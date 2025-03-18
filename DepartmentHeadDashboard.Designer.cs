@@ -63,7 +63,7 @@
             // 
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox4.Location = new Point(418, 127);
+            pictureBox4.Location = new Point(151, 127);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(145, 134);
             pictureBox4.TabIndex = 13;
@@ -73,7 +73,7 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(637, 127);
+            pictureBox1.Location = new Point(414, 127);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(145, 134);
             pictureBox1.TabIndex = 14;
@@ -103,7 +103,7 @@
             // 
             button1.BackColor = SystemColors.ActiveCaptionText;
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(436, 267);
+            button1.Location = new Point(166, 267);
             button1.Name = "button1";
             button1.Size = new Size(112, 51);
             button1.TabIndex = 28;
@@ -114,7 +114,7 @@
             // 
             button2.BackColor = SystemColors.ActiveCaptionText;
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(652, 267);
+            button2.Location = new Point(434, 267);
             button2.Name = "button2";
             button2.Size = new Size(106, 51);
             button2.TabIndex = 29;
@@ -146,8 +146,8 @@
             // pictureBox5
             // 
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Location = new Point(191, 127);
+            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox5.Location = new Point(673, 127);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(145, 134);
             pictureBox5.TabIndex = 32;
@@ -157,11 +157,11 @@
             // 
             button5.BackColor = SystemColors.ActiveCaptionText;
             button5.ForeColor = SystemColors.ButtonHighlight;
-            button5.Location = new Point(207, 267);
+            button5.Location = new Point(694, 267);
             button5.Name = "button5";
-            button5.Size = new Size(112, 51);
+            button5.Size = new Size(106, 51);
             button5.TabIndex = 33;
-            button5.Text = "New Course";
+            button5.Text = "Faculty Schedule";
             button5.UseVisualStyleBackColor = false;
             // 
             // DepartmentHeadDashboard
@@ -183,6 +183,7 @@
             Controls.Add(label1);
             Name = "DepartmentHeadDashboard";
             Text = "DepartmentHeadDashboard";
+            Load += DepartmentHeadDashboard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

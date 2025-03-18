@@ -4,16 +4,13 @@
     <Compile Update="AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Cosumables.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CourseAssignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CourseMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="CourseMan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="DepartmentHeadDashboard.cs">
@@ -28,6 +25,9 @@
     <Compile Update="FacultyDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FacultySchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -35,6 +35,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ProjectAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Projects.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ReportManAdmin.cs">
@@ -47,6 +50,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="RoomAllocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Rooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Semesters.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Signin.cs">

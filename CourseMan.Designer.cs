@@ -71,7 +71,7 @@
             // 
             button4.BackColor = SystemColors.Desktop;
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(224, 12);
+            button4.Location = new Point(267, 12);
             button4.Name = "button4";
             button4.Size = new Size(53, 27);
             button4.TabIndex = 4;
@@ -110,13 +110,13 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.WindowFrame;
+            panel1.BackColor = SystemColors.ScrollBar;
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(1, 46);
             panel1.Name = "panel1";
-            panel1.Size = new Size(211, 459);
+            panel1.Size = new Size(211, 466);
             panel1.TabIndex = 13;
             // 
             // button3
@@ -156,9 +156,9 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new Point(421, 320);
+            dataGridView1.Location = new Point(446, 319);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(439, 150);
+            dataGridView1.Size = new Size(444, 150);
             dataGridView1.TabIndex = 14;
             // 
             // Column1

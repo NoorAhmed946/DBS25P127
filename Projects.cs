@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace DBS25P127
 {
-    public partial class DepartmentHeadDashboard : Form
+    public partial class Projects : Form
     {
-        public DepartmentHeadDashboard()
+        public Projects()
         {
             InitializeComponent();
         }
 
-        private void DepartmentHeadDashboard_Load(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

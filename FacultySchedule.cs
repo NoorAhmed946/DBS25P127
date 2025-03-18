@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace DBS25P127
 {
-    public partial class DepartmentHeadDashboard : Form
+    public partial class FacultySchedule : Form
     {
-        public DepartmentHeadDashboard()
+        public FacultySchedule()
         {
             InitializeComponent();
-        }
-
-        private void DepartmentHeadDashboard_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

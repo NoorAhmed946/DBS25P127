@@ -140,7 +140,7 @@
             // 
             label4.BackColor = SystemColors.Desktop;
             label4.ForeColor = SystemColors.ButtonShadow;
-            label4.Location = new Point(699, 374);
+            label4.Location = new Point(775, 374);
             label4.Name = "label4";
             label4.Size = new Size(84, 27);
             label4.TabIndex = 24;
@@ -151,7 +151,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Approved ", "Pending", "Rejected" });
-            comboBox1.Location = new Point(699, 404);
+            comboBox1.Location = new Point(775, 404);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(160, 23);
             comboBox1.TabIndex = 25;
