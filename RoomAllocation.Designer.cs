@@ -43,7 +43,12 @@
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
             button4 = new Button();
+            dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -51,23 +56,24 @@
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(379, 28);
+            label1.Location = new Point(216, 9);
             label1.Name = "label1";
-            label1.Size = new Size(483, 46);
+            label1.Size = new Size(806, 46);
             label1.TabIndex = 6;
             label1.Text = " Faculty Rooms Allocation";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.WindowFrame;
+            panel1.BackColor = SystemColors.ScrollBar;
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(0, 1);
+            panel1.Location = new Point(4, 9);
             panel1.Name = "panel1";
             panel1.Size = new Size(214, 483);
             panel1.TabIndex = 16;
+            panel1.Paint += panel1_Paint;
             // 
             // button3
             // 
@@ -188,12 +194,36 @@
             // 
             button4.BackColor = SystemColors.Desktop;
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(263, 51);
+            button4.Location = new Point(259, 58);
             button4.Name = "button4";
             button4.Size = new Size(53, 23);
             button4.TabIndex = 27;
             button4.Text = "Back";
             button4.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
+            dataGridView1.Location = new Point(515, 342);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(339, 150);
+            dataGridView1.TabIndex = 28;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Faculty";
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "ClassRoom / Lab ";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Slot";
+            Column3.Name = "Column3";
             // 
             // RoomAllocation
             // 
@@ -202,6 +232,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1116, 573);
+            Controls.Add(dataGridView1);
             Controls.Add(button4);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
@@ -216,6 +247,7 @@
             Name = "RoomAllocation";
             Text = "RoomAllocation";
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -235,5 +267,9 @@
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private Button button4;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
     }
 }

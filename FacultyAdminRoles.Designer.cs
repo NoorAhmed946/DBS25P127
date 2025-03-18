@@ -53,9 +53,9 @@
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(438, 9);
+            label1.Location = new Point(208, 9);
             label1.Name = "label1";
-            label1.Size = new Size(483, 46);
+            label1.Size = new Size(839, 46);
             label1.TabIndex = 5;
             label1.Text = " Faculty Admin Roles";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -79,7 +79,7 @@
             button3.Name = "button3";
             button3.Size = new Size(93, 64);
             button3.TabIndex = 2;
-            button3.Text = "Delete";
+            button3.Text = "Clear";
             button3.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -108,7 +108,7 @@
             // 
             button4.BackColor = SystemColors.Desktop;
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(298, 32);
+            button4.Location = new Point(244, 60);
             button4.Name = "button4";
             button4.Size = new Size(53, 23);
             button4.TabIndex = 16;
@@ -121,7 +121,7 @@
             comboBox1.ForeColor = SystemColors.ScrollBar;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Department Head", "Faculty Members", "Administrative Staff" });
-            comboBox1.Location = new Point(438, 168);
+            comboBox1.Location = new Point(408, 168);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(260, 23);
             comboBox1.TabIndex = 17;
@@ -131,7 +131,7 @@
             // 
             label2.BackColor = SystemColors.Desktop;
             label2.ForeColor = SystemColors.ButtonShadow;
-            label2.Location = new Point(438, 143);
+            label2.Location = new Point(408, 143);
             label2.Name = "label2";
             label2.Size = new Size(92, 22);
             label2.TabIndex = 18;
@@ -142,7 +142,7 @@
             // 
             label3.BackColor = SystemColors.Desktop;
             label3.ForeColor = SystemColors.ButtonShadow;
-            label3.Location = new Point(773, 143);
+            label3.Location = new Point(757, 143);
             label3.Name = "label3";
             label3.Size = new Size(92, 22);
             label3.TabIndex = 19;
@@ -151,16 +151,16 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(773, 168);
+            textBox1.Location = new Point(757, 168);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(199, 23);
+            textBox1.Size = new Size(223, 23);
             textBox1.TabIndex = 20;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new Point(476, 284);
+            dataGridView1.Location = new Point(420, 284);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(445, 150);
             dataGridView1.TabIndex = 21;

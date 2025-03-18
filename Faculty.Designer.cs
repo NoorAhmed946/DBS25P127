@@ -31,22 +31,30 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Faculty));
             label1 = new Label();
             panel1 = new Panel();
+            button5 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
+            button4 = new Button();
+            label2 = new Label();
+            button6 = new Button();
             Column1 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            button4 = new Button();
+            comboBox1 = new ComboBox();
+            panel2 = new Panel();
+            button7 = new Button();
+            button8 = new Button();
+            button9 = new Button();
+            button10 = new Button();
+            button12 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -54,9 +62,9 @@
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(460, 27);
+            label1.Location = new Point(307, 0);
             label1.Name = "label1";
-            label1.Size = new Size(483, 46);
+            label1.Size = new Size(1081, 46);
             label1.TabIndex = 0;
             label1.Text = "Faculty Management";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -64,13 +72,25 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlDark;
+            panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(171, 459);
+            panel1.Size = new Size(171, 553);
             panel1.TabIndex = 1;
+            // 
+            // button5
+            // 
+            button5.BackColor = SystemColors.ActiveCaptionText;
+            button5.ForeColor = SystemColors.ButtonHighlight;
+            button5.Location = new Point(32, 367);
+            button5.Name = "button5";
+            button5.Size = new Size(93, 64);
+            button5.TabIndex = 3;
+            button5.Text = "Clear";
+            button5.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -108,19 +128,48 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Column1, Column6, Column7, Column8, Column2, Column3, Column4, Column5 });
-            dataGridView1.Location = new Point(220, 109);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column5, Column8, Column2, Column3 });
+            dataGridView1.Location = new Point(558, 204);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(946, 257);
+            dataGridView1.Size = new Size(642, 257);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // ID
+            // button4
             // 
-            ID.HeaderText = "Faculty ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
+            button4.BackColor = SystemColors.Desktop;
+            button4.ForeColor = SystemColors.ButtonHighlight;
+            button4.Location = new Point(193, 80);
+            button4.Name = "button4";
+            button4.Size = new Size(53, 23);
+            button4.TabIndex = 3;
+            button4.Text = "Back";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // label2
+            // 
+            label2.BackColor = SystemColors.Desktop;
+            label2.ForeColor = SystemColors.ButtonShadow;
+            label2.Location = new Point(686, 76);
+            label2.Name = "label2";
+            label2.Size = new Size(119, 27);
+            label2.TabIndex = 20;
+            label2.Text = "Select Designation ";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            label2.Click += label2_Click;
+            // 
+            // button6
+            // 
+            button6.BackColor = SystemColors.ActiveCaptionText;
+            button6.ForeColor = SystemColors.ButtonHighlight;
+            button6.Location = new Point(1107, 137);
+            button6.Name = "button6";
+            button6.Size = new Size(93, 36);
+            button6.TabIndex = 22;
+            button6.Text = "Search";
+            button6.UseVisualStyleBackColor = false;
             // 
             // Column1
             // 
@@ -128,17 +177,17 @@
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
-            // Column6
+            // Column4
             // 
-            Column6.HeaderText = "Email";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
+            Column4.HeaderText = "Email";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
             // 
-            // Column7
+            // Column5
             // 
-            Column7.HeaderText = "Contact";
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
+            Column5.HeaderText = "Contact Number";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
             // 
             // Column8
             // 
@@ -158,29 +207,82 @@
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
             // 
-            // Column4
+            // comboBox1
             // 
-            Column4.HeaderText = "UserID";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Lecturer", "Assistant Professor", "Associate Professor", "Professor" });
+            comboBox1.Location = new Point(686, 113);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(279, 23);
+            comboBox1.TabIndex = 23;
+            comboBox1.Text = "Select ";
             // 
-            // Column5
+            // panel2
             // 
-            Column5.HeaderText = "Assigned Role ";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
+            panel2.BackColor = SystemColors.ScrollBar;
+            panel2.Controls.Add(button10);
+            panel2.Controls.Add(button7);
+            panel2.Controls.Add(button8);
+            panel2.Controls.Add(button9);
+            panel2.Location = new Point(307, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(214, 483);
+            panel2.TabIndex = 24;
             // 
-            // button4
+            // button7
             // 
-            button4.BackColor = SystemColors.Desktop;
-            button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(220, 44);
-            button4.Name = "button4";
-            button4.Size = new Size(53, 23);
-            button4.TabIndex = 3;
-            button4.Text = "Back";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            button7.BackColor = SystemColors.ActiveCaptionText;
+            button7.ForeColor = SystemColors.ButtonHighlight;
+            button7.Location = new Point(56, 269);
+            button7.Name = "button7";
+            button7.Size = new Size(93, 64);
+            button7.TabIndex = 2;
+            button7.Text = "Clear";
+            button7.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            button8.BackColor = SystemColors.ActiveCaptionText;
+            button8.ForeColor = SystemColors.ButtonHighlight;
+            button8.Location = new Point(56, 204);
+            button8.Name = "button8";
+            button8.Size = new Size(93, 59);
+            button8.TabIndex = 1;
+            button8.Text = "Update";
+            button8.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            button9.BackColor = SystemColors.ActiveCaptionText;
+            button9.ForeColor = SystemColors.ButtonHighlight;
+            button9.Location = new Point(56, 137);
+            button9.Name = "button9";
+            button9.Size = new Size(93, 60);
+            button9.TabIndex = 0;
+            button9.Text = "Save";
+            button9.UseVisualStyleBackColor = false;
+            // 
+            // button10
+            // 
+            button10.BackColor = SystemColors.ActiveCaptionText;
+            button10.ForeColor = SystemColors.ButtonHighlight;
+            button10.Location = new Point(56, 339);
+            button10.Name = "button10";
+            button10.Size = new Size(93, 59);
+            button10.TabIndex = 3;
+            button10.Text = "Delete";
+            button10.UseVisualStyleBackColor = false;
+            // 
+            // button12
+            // 
+            button12.BackColor = SystemColors.Desktop;
+            button12.ForeColor = SystemColors.ButtonHighlight;
+            button12.Location = new Point(558, 12);
+            button12.Name = "button12";
+            button12.Size = new Size(53, 27);
+            button12.TabIndex = 25;
+            button12.Text = "Back";
+            button12.UseVisualStyleBackColor = false;
             // 
             // Faculty
             // 
@@ -189,6 +291,11 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1318, 582);
+            Controls.Add(button12);
+            Controls.Add(panel2);
+            Controls.Add(comboBox1);
+            Controls.Add(button6);
+            Controls.Add(label2);
             Controls.Add(button4);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
@@ -198,6 +305,7 @@
             Load += Faculty_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -209,15 +317,22 @@
         private Button button3;
         private Button button2;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ID;
+        private Button button4;
+        private Button button5;
+        private Label label2;
+        private Button button6;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private Button button4;
+        private ComboBox comboBox1;
+        private Panel panel2;
+        private Button button7;
+        private Button button8;
+        private Button button9;
+        private Button button10;
+        private Button button12;
     }
 }

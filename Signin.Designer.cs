@@ -181,7 +181,7 @@
             label7.ForeColor = SystemColors.ButtonShadow;
             label7.Location = new Point(417, 67);
             label7.Name = "label7";
-            label7.Size = new Size(216, 23);
+            label7.Size = new Size(216, 39);
             label7.TabIndex = 13;
             label7.Text = "SIGN IN ";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -201,15 +201,15 @@
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.BackColor = SystemColors.Desktop;
-            label8.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = SystemColors.AppWorkspace;
-            label8.Location = new Point(182, 19);
+            label8.BackColor = Color.Black;
+            label8.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.ControlDark;
+            label8.Location = new Point(0, 9);
             label8.Name = "label8";
-            label8.Size = new Size(669, 32);
+            label8.Size = new Size(1038, 48);
             label8.TabIndex = 15;
             label8.Text = "Faculty Workload and Resource Allocation System";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Signin
             // 
@@ -217,7 +217,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(841, 450);
+            ClientSize = new Size(912, 450);
             Controls.Add(label8);
             Controls.Add(linkLabel1);
             Controls.Add(label7);

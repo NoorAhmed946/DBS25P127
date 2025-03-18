@@ -35,10 +35,6 @@
             comboBox1 = new ComboBox();
             numericUpDown1 = new NumericUpDown();
             numericUpDown2 = new NumericUpDown();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
             panel1 = new Panel();
             button3 = new Button();
             button2 = new Button();
@@ -49,6 +45,10 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             panel1.SuspendLayout();
@@ -60,20 +60,20 @@
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(400, 25);
+            label1.Location = new Point(1, -3);
             label1.Name = "label1";
-            label1.Size = new Size(483, 46);
+            label1.Size = new Size(1101, 46);
             label1.TabIndex = 2;
-            label1.Text = "Course Management ";
+            label1.Text = "Courses";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button4
             // 
             button4.BackColor = SystemColors.Desktop;
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(245, 48);
+            button4.Location = new Point(224, 12);
             button4.Name = "button4";
-            button4.Size = new Size(53, 23);
+            button4.Size = new Size(53, 27);
             button4.TabIndex = 4;
             button4.Text = "Back";
             button4.UseVisualStyleBackColor = false;
@@ -98,52 +98,15 @@
             // 
             numericUpDown1.Location = new Point(371, 234);
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
+            numericUpDown1.Size = new Size(150, 23);
             numericUpDown1.TabIndex = 7;
             // 
             // numericUpDown2
             // 
             numericUpDown2.Location = new Point(695, 234);
             numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(120, 23);
+            numericUpDown2.Size = new Size(150, 23);
             numericUpDown2.TabIndex = 8;
-            // 
-            // label2
-            // 
-            label2.Location = new Point(371, 126);
-            label2.Name = "label2";
-            label2.Size = new Size(100, 23);
-            label2.TabIndex = 9;
-            label2.Text = "Course Name";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            label3.Location = new Point(695, 126);
-            label3.Name = "label3";
-            label3.Size = new Size(100, 23);
-            label3.TabIndex = 10;
-            label3.Text = "Course Type";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            label4.Location = new Point(371, 208);
-            label4.Name = "label4";
-            label4.Size = new Size(100, 23);
-            label4.TabIndex = 11;
-            label4.Text = "Credit Hours";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            label5.Location = new Point(695, 199);
-            label5.Name = "label5";
-            label5.Size = new Size(100, 23);
-            label5.TabIndex = 12;
-            label5.Text = "Contact Hours";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            label5.Click += label5_Click;
             // 
             // panel1
             // 
@@ -151,7 +114,7 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(0, 0);
+            panel1.Location = new Point(1, 46);
             panel1.Name = "panel1";
             panel1.Size = new Size(211, 459);
             panel1.TabIndex = 13;
@@ -227,6 +190,51 @@
             label6.Text = "All Courses";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label7
+            // 
+            label7.BackColor = SystemColors.Desktop;
+            label7.ForeColor = SystemColors.ButtonShadow;
+            label7.Location = new Point(695, 204);
+            label7.Name = "label7";
+            label7.Size = new Size(100, 27);
+            label7.TabIndex = 31;
+            label7.Text = "Contact Hours";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            label8.BackColor = SystemColors.Desktop;
+            label8.ForeColor = SystemColors.ButtonShadow;
+            label8.Location = new Point(371, 204);
+            label8.Name = "label8";
+            label8.Size = new Size(95, 27);
+            label8.TabIndex = 32;
+            label8.Text = "Credit Hours";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            label9.BackColor = SystemColors.Desktop;
+            label9.ForeColor = SystemColors.ButtonShadow;
+            label9.Location = new Point(695, 122);
+            label9.Name = "label9";
+            label9.Size = new Size(100, 27);
+            label9.TabIndex = 33;
+            label9.Text = "Course type";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            label10.BackColor = SystemColors.Desktop;
+            label10.ForeColor = SystemColors.ButtonShadow;
+            label10.Location = new Point(371, 126);
+            label10.Name = "label10";
+            label10.Size = new Size(84, 23);
+            label10.TabIndex = 34;
+            label10.Text = "Course Name";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
+            label10.Click += label10_Click;
+            // 
             // CourseMan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -234,13 +242,13 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1029, 468);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(numericUpDown2);
             Controls.Add(numericUpDown1);
             Controls.Add(comboBox1);
@@ -266,10 +274,6 @@
         private ComboBox comboBox1;
         private NumericUpDown numericUpDown1;
         private NumericUpDown numericUpDown2;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
         private Panel panel1;
         private Button button3;
         private Button button2;
@@ -280,5 +284,9 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label10;
     }
 }

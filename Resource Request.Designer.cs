@@ -36,8 +36,20 @@
             comboBox2 = new ComboBox();
             label4 = new Label();
             numericUpDown1 = new NumericUpDown();
+            panel1 = new Panel();
+            button3 = new Button();
             button1 = new Button();
+            label5 = new Label();
+            textBox1 = new TextBox();
+            dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -45,9 +57,9 @@
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(366, 21);
+            label1.Location = new Point(-81, 21);
             label1.Name = "label1";
-            label1.Size = new Size(483, 46);
+            label1.Size = new Size(1223, 46);
             label1.TabIndex = 7;
             label1.Text = " Faculty Resource Request";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -60,7 +72,7 @@
             label2.Name = "label2";
             label2.Size = new Size(92, 27);
             label2.TabIndex = 20;
-            label2.Text = "Resource Type";
+            label2.Text = "Faculty Name";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboBox1
@@ -82,7 +94,7 @@
             label3.Name = "label3";
             label3.Size = new Size(123, 27);
             label3.TabIndex = 22;
-            label3.Text = "Consumable Item";
+            label3.Text = "Resource Type";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboBox2
@@ -114,16 +126,89 @@
             numericUpDown1.Size = new Size(120, 23);
             numericUpDown1.TabIndex = 25;
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ScrollBar;
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button1);
+            panel1.Location = new Point(0, 21);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(214, 483);
+            panel1.TabIndex = 26;
+            // 
+            // button3
+            // 
+            button3.BackColor = SystemColors.ActiveCaptionText;
+            button3.ForeColor = SystemColors.ButtonHighlight;
+            button3.Location = new Point(42, 185);
+            button3.Name = "button3";
+            button3.Size = new Size(93, 64);
+            button3.TabIndex = 2;
+            button3.Text = "Clear";
+            button3.UseVisualStyleBackColor = false;
+            // 
             // button1
             // 
             button1.BackColor = SystemColors.ActiveCaptionText;
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(819, 270);
+            button1.Location = new Point(42, 106);
             button1.Name = "button1";
             button1.Size = new Size(93, 60);
-            button1.TabIndex = 26;
-            button1.Text = "Submit Request";
+            button1.TabIndex = 0;
+            button1.Text = "Submit";
             button1.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            label5.BackColor = SystemColors.Desktop;
+            label5.ForeColor = SystemColors.ButtonShadow;
+            label5.Location = new Point(652, 217);
+            label5.Name = "label5";
+            label5.Size = new Size(123, 27);
+            label5.TabIndex = 27;
+            label5.Text = "Description";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(652, 247);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(260, 23);
+            textBox1.TabIndex = 28;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
+            dataGridView1.Location = new Point(335, 334);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(543, 150);
+            dataGridView1.TabIndex = 29;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Faculty Name";
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Resource Type";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "quantity";
+            Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Description";
+            Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Status";
+            Column5.Name = "Column5";
             // 
             // Resource_Request
             // 
@@ -132,7 +217,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1027, 471);
-            Controls.Add(button1);
+            Controls.Add(dataGridView1);
+            Controls.Add(textBox1);
+            Controls.Add(label5);
+            Controls.Add(panel1);
             Controls.Add(numericUpDown1);
             Controls.Add(label4);
             Controls.Add(comboBox2);
@@ -143,8 +231,12 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "Resource_Request";
             Text = "Resource_Request";
+            Load += Resource_Request_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -156,6 +248,16 @@
         private ComboBox comboBox2;
         private Label label4;
         private NumericUpDown numericUpDown1;
+        private Panel panel1;
+        private Button button3;
         private Button button1;
+        private Label label5;
+        private TextBox textBox1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
     }
 }

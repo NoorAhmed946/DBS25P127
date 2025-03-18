@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace DBS25P127
 {
-    public partial class RoomAllocation : Form
+    public partial class ViewCourses : Form
     {
-        public RoomAllocation()
+        public ViewCourses()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void ViewCourses_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

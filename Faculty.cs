@@ -33,5 +33,10 @@ namespace DBS25P127
             dashBoard.Show();
             this.Hide();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

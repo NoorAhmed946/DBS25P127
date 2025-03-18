@@ -31,5 +31,10 @@ namespace DBS25P127
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

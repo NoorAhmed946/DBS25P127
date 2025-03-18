@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace DBS25P127
 {
-    public partial class Resource_Request : Form
+    public partial class ReportManAdmin : Form
     {
-        public Resource_Request()
+        public ReportManAdmin()
         {
             InitializeComponent();
-        }
-
-        private void Resource_Request_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
