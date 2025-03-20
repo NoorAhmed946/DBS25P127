@@ -40,9 +40,7 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            button5 = new Button();
             button4 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -58,6 +56,7 @@
             button4.TabIndex = 3;
             button4.Text = "Delete";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label1
             // 
@@ -105,6 +104,7 @@
             button2.TabIndex = 1;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -116,6 +116,7 @@
             button1.TabIndex = 0;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -145,39 +146,36 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(212, 23);
             textBox1.TabIndex = 24;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(659, 142);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(250, 108);
+            textBox2.Size = new Size(360, 108);
             textBox2.TabIndex = 25;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
-            dataGridView1.Location = new Point(433, 288);
+            dataGridView1.Location = new Point(461, 298);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(345, 150);
+            dataGridView1.Size = new Size(244, 150);
             dataGridView1.TabIndex = 26;
             // 
-            // Column1
+            // button5
             // 
-            Column1.HeaderText = "Project ID";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Title";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Description";
-            Column3.Name = "Column3";
+            button5.BackColor = SystemColors.Desktop;
+            button5.ForeColor = SystemColors.ButtonHighlight;
+            button5.Location = new Point(274, 12);
+            button5.Name = "button5";
+            button5.Size = new Size(53, 23);
+            button5.TabIndex = 27;
+            button5.Text = "Back";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // Projects
             // 
@@ -185,6 +183,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(934, 450);
+            Controls.Add(button5);
             Controls.Add(dataGridView1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -212,8 +211,6 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
+        private Button button5;
     }
 }

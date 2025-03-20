@@ -34,20 +34,17 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
-            textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             button4 = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -83,8 +80,9 @@
             button3.Name = "button3";
             button3.Size = new Size(93, 64);
             button3.TabIndex = 2;
-            button3.Text = "Clear";
+            button3.Text = "Delete";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -96,6 +94,7 @@
             button2.TabIndex = 1;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -105,19 +104,9 @@
             button1.Name = "button1";
             button1.Size = new Size(93, 60);
             button1.TabIndex = 0;
-            button1.Text = "Assign";
+            button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            label2.BackColor = SystemColors.Desktop;
-            label2.ForeColor = SystemColors.ButtonShadow;
-            label2.Location = new Point(682, 217);
-            label2.Name = "label2";
-            label2.Size = new Size(92, 22);
-            label2.TabIndex = 16;
-            label2.Text = "Reserved Hours";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            button1.Click += button1_Click;
             // 
             // label3
             // 
@@ -127,7 +116,7 @@
             label3.Name = "label3";
             label3.Size = new Size(92, 22);
             label3.TabIndex = 17;
-            label3.Text = "Rooms";
+            label3.Text = "Capacity";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -138,7 +127,7 @@
             label4.Name = "label4";
             label4.Size = new Size(92, 22);
             label4.TabIndex = 18;
-            label4.Text = "Semester";
+            label4.Text = "Room Type";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -149,69 +138,33 @@
             label5.Name = "label5";
             label5.Size = new Size(92, 22);
             label5.TabIndex = 19;
-            label5.Text = "Faculty Name";
+            label5.Text = "Room Name";
             label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(369, 151);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(239, 23);
-            comboBox1.TabIndex = 20;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(369, 248);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(239, 23);
-            comboBox2.TabIndex = 21;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(682, 152);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(222, 23);
-            comboBox3.TabIndex = 22;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(682, 242);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(222, 23);
-            textBox1.TabIndex = 23;
-            textBox1.TextChanged += textBox1_TextChanged;
+            label5.Click += label5_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
             dataGridView1.Location = new Point(435, 326);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(438, 150);
+            dataGridView1.Size = new Size(339, 150);
             dataGridView1.TabIndex = 24;
             // 
             // Column1
             // 
-            Column1.HeaderText = "Faculty";
+            Column1.HeaderText = "Room Name";
             Column1.Name = "Column1";
             // 
             // Column2
             // 
-            Column2.HeaderText = "Semester";
+            Column2.HeaderText = "Room Type";
             Column2.Name = "Column2";
             // 
             // Column3
             // 
-            Column3.HeaderText = "ClassRoom";
+            Column3.HeaderText = "Capacity";
             Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Reserved Hours";
-            Column4.Name = "Column4";
             // 
             // button4
             // 
@@ -223,6 +176,31 @@
             button4.TabIndex = 25;
             button4.Text = "Back";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(369, 152);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(239, 23);
+            textBox1.TabIndex = 26;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(682, 151);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(239, 23);
+            textBox2.TabIndex = 27;
+            textBox2.TextChanged += textBox2_TextChanged;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(369, 248);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(239, 23);
+            textBox3.TabIndex = 28;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // Rooms
             // 
@@ -230,16 +208,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(916, 503);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(button4);
             Controls.Add(dataGridView1);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(panel1);
             Controls.Add(label1);
             Name = "Rooms";
@@ -257,19 +233,16 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
-        private TextBox textBox1;
         private DataGridView dataGridView1;
+        private Button button4;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private Button button4;
     }
 }

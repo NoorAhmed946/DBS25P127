@@ -16,5 +16,40 @@ namespace DBS25P127
         {
             InitializeComponent();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CourseMan newCourse = new CourseMan();
+            this.Hide();
+            newCourse.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Semesters semesters = new Semesters();
+            this.Hide();
+            semesters.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Rooms rooms = new Rooms();
+            this.Hide();
+            rooms.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Cosumables consumbale = new Cosumables();
+            this.Hide();
+            consumbale.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Projects projects = new Projects();
+            projects.Show();
+            this.Hide();
+        }
     }
 }

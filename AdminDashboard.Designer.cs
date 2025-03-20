@@ -60,7 +60,7 @@
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Location = new Point(-6, -1);
             label1.Name = "label1";
-            label1.Size = new Size(975, 46);
+            label1.Size = new Size(1096, 46);
             label1.TabIndex = 11;
             label1.Text = "DashBoard";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -79,7 +79,7 @@
             // 
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(313, 134);
+            pictureBox2.Location = new Point(339, 134);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(172, 151);
             pictureBox2.TabIndex = 13;
@@ -100,7 +100,7 @@
             // 
             button2.BackColor = SystemColors.ActiveCaptionText;
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(339, 291);
+            button2.Location = new Point(364, 291);
             button2.Name = "button2";
             button2.Size = new Size(112, 51);
             button2.TabIndex = 31;
@@ -111,18 +111,19 @@
             // 
             button5.BackColor = SystemColors.ActiveCaptionText;
             button5.ForeColor = SystemColors.ButtonHighlight;
-            button5.Location = new Point(564, 291);
+            button5.Location = new Point(605, 291);
             button5.Name = "button5";
             button5.Size = new Size(112, 51);
             button5.TabIndex = 34;
             button5.Text = "New Course";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // pictureBox5
             // 
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Location = new Point(538, 134);
+            pictureBox5.Location = new Point(581, 134);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(158, 151);
             pictureBox5.TabIndex = 35;
@@ -138,43 +139,49 @@
             button3.TabIndex = 36;
             button3.Text = "Rooms";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
             button4.BackColor = SystemColors.ActiveCaptionText;
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(684, 553);
+            button4.Location = new Point(701, 553);
             button4.Name = "button4";
             button4.Size = new Size(112, 51);
             button4.TabIndex = 37;
             button4.Text = "Consumables";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button6
             // 
             button6.BackColor = SystemColors.ActiveCaptionText;
             button6.ForeColor = SystemColors.ButtonHighlight;
-            button6.Location = new Point(758, 291);
+            button6.Location = new Point(824, 291);
             button6.Name = "button6";
             button6.Size = new Size(112, 51);
             button6.TabIndex = 38;
             button6.Text = "Semester ";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button7
             // 
             button7.BackColor = SystemColors.ActiveCaptionText;
             button7.ForeColor = SystemColors.ButtonHighlight;
-            button7.Location = new Point(480, 553);
+            button7.Location = new Point(487, 553);
             button7.Name = "button7";
             button7.Size = new Size(112, 51);
             button7.TabIndex = 39;
             button7.Text = "Projects";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(732, 134);
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(804, 134);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(158, 151);
             pictureBox3.TabIndex = 40;
@@ -182,7 +189,9 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(663, 396);
+            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.Location = new Point(684, 396);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(158, 151);
             pictureBox4.TabIndex = 41;
@@ -190,7 +199,9 @@
             // 
             // pictureBox6
             // 
-            pictureBox6.Location = new Point(458, 396);
+            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox6.Location = new Point(467, 396);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(158, 151);
             pictureBox6.TabIndex = 42;
@@ -198,6 +209,8 @@
             // 
             // pictureBox7
             // 
+            pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
+            pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox7.Location = new Point(253, 396);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(158, 151);

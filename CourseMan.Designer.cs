@@ -40,10 +40,6 @@
             button2 = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
@@ -77,6 +73,7 @@
             button4.TabIndex = 4;
             button4.Text = "Back";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // textBox1
             // 
@@ -84,6 +81,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(231, 23);
             textBox1.TabIndex = 5;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // comboBox1
             // 
@@ -93,6 +91,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(216, 23);
             comboBox1.TabIndex = 6;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // numericUpDown1
             // 
@@ -100,6 +99,7 @@
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(150, 23);
             numericUpDown1.TabIndex = 7;
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // numericUpDown2
             // 
@@ -107,6 +107,7 @@
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(150, 23);
             numericUpDown2.TabIndex = 8;
+            numericUpDown2.ValueChanged += numericUpDown2_ValueChanged;
             // 
             // panel1
             // 
@@ -114,9 +115,9 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(1, 46);
+            panel1.Location = new Point(1, -3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(211, 466);
+            panel1.Size = new Size(211, 512);
             panel1.TabIndex = 13;
             // 
             // button3
@@ -129,57 +130,40 @@
             button3.TabIndex = 2;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
             button2.BackColor = SystemColors.ActiveCaptionText;
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(56, 190);
+            button2.Location = new Point(56, 201);
             button2.Name = "button2";
             button2.Size = new Size(93, 59);
             button2.TabIndex = 1;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
             button1.BackColor = SystemColors.ActiveCaptionText;
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(56, 89);
+            button1.Location = new Point(56, 108);
             button1.Name = "button1";
             button1.Size = new Size(93, 60);
             button1.TabIndex = 0;
             button1.Text = "Add ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new Point(446, 319);
+            dataGridView1.Location = new Point(421, 320);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(444, 150);
             dataGridView1.TabIndex = 14;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Course";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Course Type";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Credit Hours";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Contact Hours";
-            Column4.Name = "Column4";
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label6
             // 
@@ -279,10 +263,6 @@
         private Button button2;
         private Button button1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private Label label6;
         private Label label7;
         private Label label8;

@@ -38,19 +38,30 @@
             label2 = new Label();
             textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
+            button5 = new Button();
             button4 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // button4
+            // 
+            button4.BackColor = SystemColors.ActiveCaptionText;
+            button4.ForeColor = SystemColors.ButtonHighlight;
+            button4.Location = new Point(56, 290);
+            button4.Name = "button4";
+            button4.Size = new Size(93, 64);
+            button4.TabIndex = 3;
+            button4.Text = "Delete";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label1
             // 
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(70, 9);
+            label1.Location = new Point(71, 3);
             label1.Name = "label1";
             label1.Size = new Size(855, 46);
             label1.TabIndex = 15;
@@ -64,21 +75,10 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(1, 9);
+            panel1.Location = new Point(1, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(214, 469);
             panel1.TabIndex = 21;
-            // 
-            // button4
-            // 
-            button4.BackColor = SystemColors.ActiveCaptionText;
-            button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(56, 290);
-            button4.Name = "button4";
-            button4.Size = new Size(93, 64);
-            button4.TabIndex = 3;
-            button4.Text = "Delete";
-            button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -101,6 +101,7 @@
             button2.TabIndex = 1;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -112,6 +113,7 @@
             button1.TabIndex = 0;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -130,25 +132,27 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(246, 23);
             textBox1.TabIndex = 23;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridView1.Location = new Point(440, 186);
+            dataGridView1.Location = new Point(430, 186);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(239, 150);
+            dataGridView1.Size = new Size(161, 150);
             dataGridView1.TabIndex = 24;
             // 
-            // Column1
+            // button5
             // 
-            Column1.HeaderText = "Item id";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Item Name";
-            Column2.Name = "Column2";
+            button5.BackColor = SystemColors.Desktop;
+            button5.ForeColor = SystemColors.ButtonHighlight;
+            button5.Location = new Point(272, 26);
+            button5.Name = "button5";
+            button5.Size = new Size(53, 23);
+            button5.TabIndex = 26;
+            button5.Text = "Back";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // Cosumables
             // 
@@ -157,6 +161,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(925, 450);
+            Controls.Add(button5);
             Controls.Add(dataGridView1);
             Controls.Add(textBox1);
             Controls.Add(label2);
@@ -180,7 +185,6 @@
         private Label label2;
         private TextBox textBox1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
+        private Button button5;
     }
 }

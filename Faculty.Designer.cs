@@ -46,6 +46,11 @@
             button8 = new Button();
             button9 = new Button();
             button12 = new Button();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -66,7 +71,7 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column5, Column8, Column2, Column3 });
-            dataGridView1.Location = new Point(291, 223);
+            dataGridView1.Location = new Point(311, 284);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(642, 257);
@@ -113,7 +118,7 @@
             // 
             label2.BackColor = SystemColors.Desktop;
             label2.ForeColor = SystemColors.ButtonShadow;
-            label2.Location = new Point(358, 83);
+            label2.Location = new Point(674, 217);
             label2.Name = "label2";
             label2.Size = new Size(119, 27);
             label2.TabIndex = 20;
@@ -125,7 +130,7 @@
             // 
             button6.BackColor = SystemColors.ActiveCaptionText;
             button6.ForeColor = SystemColors.ButtonHighlight;
-            button6.Location = new Point(544, 146);
+            button6.Location = new Point(218, 317);
             button6.Name = "button6";
             button6.Size = new Size(93, 36);
             button6.TabIndex = 22;
@@ -137,7 +142,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Lecturer", "Assistant Professor", "Associate Professor", "Professor" });
-            comboBox1.Location = new Point(358, 113);
+            comboBox1.Location = new Point(684, 255);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(279, 23);
             comboBox1.TabIndex = 23;
@@ -152,7 +157,7 @@
             panel2.Controls.Add(button9);
             panel2.Location = new Point(-2, -3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(214, 483);
+            panel2.Size = new Size(214, 544);
             panel2.TabIndex = 24;
             panel2.Paint += panel2_Paint;
             // 
@@ -173,7 +178,7 @@
             button7.ForeColor = SystemColors.ButtonHighlight;
             button7.Location = new Point(56, 269);
             button7.Name = "button7";
-            button7.Size = new Size(93, 64);
+            button7.Size = new Size(93, 56);
             button7.TabIndex = 2;
             button7.Text = "Clear";
             button7.UseVisualStyleBackColor = false;
@@ -211,13 +216,73 @@
             button12.Text = "Back";
             button12.UseVisualStyleBackColor = false;
             // 
+            // label3
+            // 
+            label3.BackColor = SystemColors.Desktop;
+            label3.ForeColor = SystemColors.ButtonShadow;
+            label3.Location = new Point(320, 75);
+            label3.Name = "label3";
+            label3.Size = new Size(119, 27);
+            label3.TabIndex = 26;
+            label3.Text = "Select Designation ";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            label4.BackColor = SystemColors.Desktop;
+            label4.ForeColor = SystemColors.ButtonShadow;
+            label4.Location = new Point(466, 92);
+            label4.Name = "label4";
+            label4.Size = new Size(119, 27);
+            label4.TabIndex = 27;
+            label4.Text = "Select Designation ";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            label5.BackColor = SystemColors.Desktop;
+            label5.ForeColor = SystemColors.ButtonShadow;
+            label5.Location = new Point(651, 92);
+            label5.Name = "label5";
+            label5.Size = new Size(119, 27);
+            label5.TabIndex = 28;
+            label5.Text = "Select Designation ";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            label6.BackColor = SystemColors.Desktop;
+            label6.ForeColor = SystemColors.ButtonShadow;
+            label6.Location = new Point(434, 167);
+            label6.Name = "label6";
+            label6.Size = new Size(119, 27);
+            label6.TabIndex = 29;
+            label6.Text = "Select Designation ";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            label7.BackColor = SystemColors.Desktop;
+            label7.ForeColor = SystemColors.ButtonShadow;
+            label7.Location = new Point(578, 134);
+            label7.Name = "label7";
+            label7.Size = new Size(119, 27);
+            label7.TabIndex = 30;
+            label7.Text = "Select Designation ";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Faculty
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(938, 582);
+            ClientSize = new Size(1024, 582);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(button12);
             Controls.Add(panel2);
             Controls.Add(comboBox1);
@@ -252,5 +317,10 @@
         private Button button9;
         private Button button10;
         private Button button12;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
     }
 }

@@ -42,7 +42,7 @@
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            button5 = new Button();
             button4 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -58,6 +58,7 @@
             button4.TabIndex = 3;
             button4.Text = "Delete";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label1
             // 
@@ -77,6 +78,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(236, 23);
             textBox2.TabIndex = 14;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label2
             // 
@@ -99,6 +101,7 @@
             label3.TabIndex = 16;
             label3.Text = "Term";
             label3.TextAlign = ContentAlignment.MiddleCenter;
+            label3.Click += label3_Click;
             // 
             // comboBox1
             // 
@@ -109,6 +112,7 @@
             comboBox1.Size = new Size(190, 23);
             comboBox1.TabIndex = 17;
             comboBox1.Text = "Select";
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // panel1
             // 
@@ -143,6 +147,7 @@
             button2.TabIndex = 1;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -154,30 +159,39 @@
             button1.TabIndex = 0;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
-            dataGridView1.Location = new Point(369, 256);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
+            dataGridView1.Location = new Point(407, 260);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(342, 150);
+            dataGridView1.Size = new Size(243, 150);
             dataGridView1.TabIndex = 19;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
-            Column1.HeaderText = "Semester id";
+            Column1.HeaderText = "Term";
             Column1.Name = "Column1";
             // 
             // Column2
             // 
-            Column2.HeaderText = "Term";
+            Column2.HeaderText = "Year";
             Column2.Name = "Column2";
             // 
-            // Column3
+            // button5
             // 
-            Column3.HeaderText = "Year";
-            Column3.Name = "Column3";
+            button5.BackColor = SystemColors.Desktop;
+            button5.ForeColor = SystemColors.ButtonHighlight;
+            button5.Location = new Point(261, 12);
+            button5.Name = "button5";
+            button5.Size = new Size(53, 23);
+            button5.TabIndex = 26;
+            button5.Text = "Back";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // Semesters
             // 
@@ -186,6 +200,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(908, 450);
+            Controls.Add(button5);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
             Controls.Add(comboBox1);
@@ -215,6 +230,6 @@
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
+        private Button button5;
     }
 }
