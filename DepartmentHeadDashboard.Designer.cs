@@ -109,6 +109,7 @@
             button1.TabIndex = 28;
             button1.Text = "Course Allocation";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 

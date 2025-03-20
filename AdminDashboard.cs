@@ -51,5 +51,12 @@ namespace DBS25P127
             projects.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Faculty faculty = new Faculty();
+            this.Hide();
+            faculty.Show();
+        }
     }
 }

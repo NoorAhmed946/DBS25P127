@@ -40,11 +40,13 @@
             label3 = new Label();
             label4 = new Label();
             numericUpDown1 = new NumericUpDown();
-            comboBox2 = new ComboBox();
             label5 = new Label();
+            comboBox2 = new ComboBox();
             comboBox3 = new ComboBox();
+            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -79,30 +81,32 @@
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, -2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(214, 469);
+            panel1.Size = new Size(214, 527);
             panel1.TabIndex = 14;
             // 
             // button3
             // 
             button3.BackColor = SystemColors.ActiveCaptionText;
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(56, 283);
+            button3.Location = new Point(56, 276);
             button3.Name = "button3";
             button3.Size = new Size(93, 64);
             button3.TabIndex = 2;
             button3.Text = "Clear";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
             button2.BackColor = SystemColors.ActiveCaptionText;
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(56, 190);
+            button2.Location = new Point(56, 182);
             button2.Name = "button2";
             button2.Size = new Size(93, 59);
             button2.TabIndex = 1;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -114,6 +118,7 @@
             button1.TabIndex = 0;
             button1.Text = "Assign";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button4
             // 
@@ -125,12 +130,13 @@
             button4.TabIndex = 15;
             button4.Text = "Back";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // comboBox1
             // 
-            comboBox1.BackColor = SystemColors.MenuText;
+            comboBox1.BackColor = SystemColors.Menu;
             comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            comboBox1.ForeColor = SystemColors.ScrollBar;
+            comboBox1.ForeColor = SystemColors.MenuText;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(346, 164);
             comboBox1.Name = "comboBox1";
@@ -167,18 +173,6 @@
             numericUpDown1.Size = new Size(237, 23);
             numericUpDown1.TabIndex = 20;
             // 
-            // comboBox2
-            // 
-            comboBox2.BackColor = SystemColors.MenuText;
-            comboBox2.DrawMode = DrawMode.OwnerDrawFixed;
-            comboBox2.ForeColor = SystemColors.ScrollBar;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(695, 164);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(260, 24);
-            comboBox2.TabIndex = 21;
-            comboBox2.Text = "Select Title";
-            // 
             // label5
             // 
             label5.BackColor = SystemColors.Desktop;
@@ -190,17 +184,37 @@
             label5.Text = "Semester";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // comboBox2
+            // 
+            comboBox2.BackColor = SystemColors.Menu;
+            comboBox2.DrawMode = DrawMode.OwnerDrawFixed;
+            comboBox2.ForeColor = SystemColors.MenuText;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(346, 242);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(260, 24);
+            comboBox2.TabIndex = 23;
+            comboBox2.Text = "Select Semester";
+            // 
             // comboBox3
             // 
-            comboBox3.BackColor = SystemColors.MenuText;
+            comboBox3.BackColor = SystemColors.Menu;
             comboBox3.DrawMode = DrawMode.OwnerDrawFixed;
-            comboBox3.ForeColor = SystemColors.ScrollBar;
+            comboBox3.ForeColor = SystemColors.MenuText;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(346, 242);
+            comboBox3.Location = new Point(695, 164);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(260, 24);
-            comboBox3.TabIndex = 23;
-            comboBox3.Text = "Select Semester";
+            comboBox3.TabIndex = 24;
+            comboBox3.Text = "Select Title";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(432, 307);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(412, 176);
+            dataGridView1.TabIndex = 25;
             // 
             // ProjectAssignment
             // 
@@ -209,9 +223,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1036, 479);
+            Controls.Add(dataGridView1);
             Controls.Add(comboBox3);
-            Controls.Add(label5);
             Controls.Add(comboBox2);
+            Controls.Add(label5);
             Controls.Add(numericUpDown1);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -225,6 +240,7 @@
             Load += ProjectAssignment_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -241,8 +257,9 @@
         private Label label3;
         private Label label4;
         private NumericUpDown numericUpDown1;
-        private ComboBox comboBox2;
         private Label label5;
+        private ComboBox comboBox2;
         private ComboBox comboBox3;
+        private DataGridView dataGridView1;
     }
 }

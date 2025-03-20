@@ -21,5 +21,12 @@ namespace DBS25P127
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CourseAssignment courseAssignment = new CourseAssignment();
+            this.Hide();
+            courseAssignment.Show();
+        }
     }
 }

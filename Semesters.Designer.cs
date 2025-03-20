@@ -167,6 +167,7 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
             dataGridView1.Location = new Point(407, 260);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(243, 150);
             dataGridView1.TabIndex = 19;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -175,11 +176,13 @@
             // 
             Column1.HeaderText = "Term";
             Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // Column2
             // 
             Column2.HeaderText = "Year";
             Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // button5
             // 

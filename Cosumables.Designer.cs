@@ -65,7 +65,7 @@
             label1.Name = "label1";
             label1.Size = new Size(855, 46);
             label1.TabIndex = 15;
-            label1.Text = "Projects";
+            label1.Text = "Consumables";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -146,7 +146,7 @@
             // 
             button5.BackColor = SystemColors.Desktop;
             button5.ForeColor = SystemColors.ButtonHighlight;
-            button5.Location = new Point(272, 26);
+            button5.Location = new Point(260, 12);
             button5.Name = "button5";
             button5.Size = new Size(53, 23);
             button5.TabIndex = 26;

@@ -40,5 +40,32 @@ namespace DBS25P127
             DatabaseHelper.Instance.Update(query);
             return true;
         }
+
+
+        // FACULTY PROJECTS TABLE FUNCTIONS 
+        public static bool AddFacultyProject(int facultyId, int projectId, int semesterId, int supervisionHours)
+        {
+            string query = $@"
+        INSERT INTO faculty_projects (faculty_id, project_id, semester_id, supervision_hours)
+        VALUES ({facultyId}, {projectId}, {semesterId}, {supervisionHours})";
+
+            DatabaseHelper.Instance.Update(query);
+            return true;
+        }
+
+        public static bool UpdateFacultyProject(int id, int facultyId, int projectId, int semesterId, int supervisionHours)
+        {
+            string query = $@"
+        UPDATE faculty_projects 
+        SET faculty_id = {facultyId}, 
+            project_id = {projectId}, 
+            semester_id = {semesterId}, 
+            supervision_hours = {supervisionHours}
+        WHERE faculty_project_id = {id}";
+
+            DatabaseHelper.Instance.Update(query);
+            return true;
+        }
+
     }
 }

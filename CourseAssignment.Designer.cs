@@ -35,10 +35,6 @@
             label3 = new Label();
             label4 = new Label();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
             label7 = new Label();
             comboBox1 = new ComboBox();
             button2 = new Button();
@@ -65,24 +61,29 @@
             // 
             // comboBox2
             // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(410, 156);
+            comboBox2.Location = new Point(313, 149);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(265, 23);
             comboBox2.TabIndex = 4;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // comboBox3
             // 
+            comboBox3.AllowDrop = true;
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3.FormattingEnabled = true;
             comboBox3.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8" });
-            comboBox3.Location = new Point(410, 218);
+            comboBox3.Location = new Point(313, 218);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(265, 23);
             comboBox3.TabIndex = 5;
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             // 
             // label3
             // 
-            label3.Location = new Point(410, 123);
+            label3.Location = new Point(313, 123);
             label3.Name = "label3";
             label3.Size = new Size(100, 23);
             label3.TabIndex = 7;
@@ -91,7 +92,7 @@
             // 
             // label4
             // 
-            label4.Location = new Point(410, 192);
+            label4.Location = new Point(313, 192);
             label4.Name = "label4";
             label4.Size = new Size(100, 23);
             label4.TabIndex = 8;
@@ -102,35 +103,14 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.ScrollBar;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column5 });
-            dataGridView1.Location = new Point(520, 280);
+            dataGridView1.Location = new Point(388, 291);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(443, 215);
+            dataGridView1.Size = new Size(485, 215);
             dataGridView1.TabIndex = 11;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Faculty";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Semester";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Course";
-            Column3.Name = "Column3";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Credit Hours";
-            Column5.Name = "Column5";
             // 
             // label7
             // 
-            label7.Location = new Point(813, 123);
+            label7.Location = new Point(694, 123);
             label7.Name = "label7";
             label7.Size = new Size(100, 23);
             label7.TabIndex = 17;
@@ -139,8 +119,9 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(813, 156);
+            comboBox1.Location = new Point(694, 149);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(265, 23);
             comboBox1.TabIndex = 18;
@@ -156,6 +137,7 @@
             button2.TabIndex = 19;
             button2.Text = "Back";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // panel1
             // 
@@ -172,39 +154,43 @@
             // 
             button3.BackColor = SystemColors.ActiveCaptionText;
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(56, 283);
+            button3.Location = new Point(56, 215);
             button3.Name = "button3";
-            button3.Size = new Size(93, 64);
+            button3.Size = new Size(93, 49);
             button3.TabIndex = 2;
             button3.Text = "Clear";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button1
             // 
             button1.BackColor = SystemColors.ActiveCaptionText;
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(56, 190);
+            button1.Location = new Point(56, 148);
             button1.Name = "button1";
-            button1.Size = new Size(93, 59);
+            button1.Size = new Size(93, 51);
             button1.TabIndex = 1;
             button1.Text = "Update";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button4
             // 
             button4.BackColor = SystemColors.ActiveCaptionText;
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(56, 89);
+            button4.Location = new Point(56, 80);
             button4.Name = "button4";
-            button4.Size = new Size(93, 60);
+            button4.Size = new Size(93, 57);
             button4.TabIndex = 0;
             button4.Text = "Assign";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // CourseAssignment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1184, 702);
@@ -218,7 +204,6 @@
             Controls.Add(comboBox3);
             Controls.Add(comboBox2);
             Controls.Add(label1);
-            Enabled = false;
             Name = "CourseAssignment";
             Text = "CourseAssignment";
             WindowState = FormWindowState.Maximized;
@@ -243,9 +228,5 @@
         private Button button3;
         private Button button1;
         private Button button4;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column5;
     }
 }
