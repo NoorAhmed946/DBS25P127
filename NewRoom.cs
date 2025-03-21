@@ -42,5 +42,35 @@ namespace DBS25P127
             DatabaseHelper.Instance.Update(query);
             return true;
         }
+
+        // ROOM ALLOCATION FUNCTIONS 
+        
+        // ASSIGN 
+        public static bool AddFacultyRoomAllocation(int facultyId, int roomId, int reservedHours, int semesterId)
+        {
+            string query = $@"
+            INSERT INTO faculty_room_allocations (faculty_id, room_id, reserved_hours, semester_id)
+            VALUES ({facultyId}, {roomId}, {reservedHours}, {semesterId})";
+
+            DatabaseHelper.Instance.Update(query);
+            return true;
+        }
+
+        // UPDATE 
+
+        public static bool UpdateFacultyRoomAllocation(int allocationId, int facultyId, int roomId, int reservedHours, int semesterId)
+        {
+            string query = $@"
+    UPDATE faculty_room_allocations 
+    SET faculty_id = {facultyId}, 
+        room_id = {roomId}, 
+        reserved_hours = {reservedHours}, 
+        semester_id = {semesterId}
+    WHERE allocation_id = {allocationId}";
+
+            DatabaseHelper.Instance.Update(query);
+            return true;
+        }
+
     }
 }

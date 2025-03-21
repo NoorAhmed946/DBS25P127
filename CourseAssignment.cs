@@ -37,6 +37,7 @@ namespace DBS25P127
                 comboBox1.DataSource = dt1;
                 comboBox1.DisplayMember = "name";
                 comboBox1.ValueMember = "faculty_id";
+                comboBox1.SelectedIndex = -1;
 
                 // Load Courses
                 MySqlDataAdapter da2 = new MySqlDataAdapter("SELECT course_id, course_name FROM courses", conn);
@@ -45,6 +46,7 @@ namespace DBS25P127
                 comboBox2.DataSource = dt2;
                 comboBox2.DisplayMember = "course_name";
                 comboBox2.ValueMember = "course_id";
+                comboBox2.SelectedIndex = -1;  
 
                 // Load Semesters
                 MySqlDataAdapter da3 = new MySqlDataAdapter("SELECT semester_id,term , year  FROM semesters", conn);
@@ -58,6 +60,7 @@ namespace DBS25P127
                 comboBox3.DataSource = dt3;
                 comboBox3.DisplayMember = "semester";
                 comboBox3.ValueMember = "semester_id";
+                comboBox3.SelectedIndex = -1;
             }
         }
 

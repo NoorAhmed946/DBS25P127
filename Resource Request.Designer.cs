@@ -31,9 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resource_Request));
             label1 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
             label3 = new Label();
-            comboBox2 = new ComboBox();
             label4 = new Label();
             numericUpDown1 = new NumericUpDown();
             panel1 = new Panel();
@@ -42,11 +40,8 @@
             label5 = new Label();
             textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -75,17 +70,6 @@
             label2.Text = "Faculty Name";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = SystemColors.MenuText;
-            comboBox1.ForeColor = SystemColors.ScrollBar;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(304, 164);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(260, 23);
-            comboBox1.TabIndex = 21;
-            comboBox1.Text = "Select";
-            // 
             // label3
             // 
             label3.BackColor = SystemColors.Desktop;
@@ -96,17 +80,6 @@
             label3.TabIndex = 22;
             label3.Text = "Resource Type";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // comboBox2
-            // 
-            comboBox2.BackColor = SystemColors.MenuText;
-            comboBox2.ForeColor = SystemColors.ScrollBar;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(652, 164);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(260, 23);
-            comboBox2.TabIndex = 23;
-            comboBox2.Text = "Select";
             // 
             // label4
             // 
@@ -125,6 +98,7 @@
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(120, 23);
             numericUpDown1.TabIndex = 25;
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // panel1
             // 
@@ -174,42 +148,35 @@
             textBox1.Location = new Point(652, 247);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 49);
+            textBox1.Size = new Size(242, 81);
             textBox1.TabIndex = 28;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
             dataGridView1.Location = new Point(335, 334);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(543, 150);
             dataGridView1.TabIndex = 29;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // Column1
+            // comboBox1
             // 
-            Column1.HeaderText = "Faculty Name";
-            Column1.Name = "Column1";
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(304, 164);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(242, 23);
+            comboBox1.TabIndex = 30;
             // 
-            // Column2
+            // comboBox2
             // 
-            Column2.HeaderText = "Resource Type";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "quantity";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Description";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Status";
-            Column5.Name = "Column5";
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(652, 164);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(242, 23);
+            comboBox2.TabIndex = 31;
             // 
             // Resource_Request
             // 
@@ -217,16 +184,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1027, 471);
+            ClientSize = new Size(1027, 528);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
             Controls.Add(textBox1);
             Controls.Add(label5);
             Controls.Add(panel1);
             Controls.Add(numericUpDown1);
             Controls.Add(label4);
-            Controls.Add(comboBox2);
             Controls.Add(label3);
-            Controls.Add(comboBox1);
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
@@ -244,9 +211,7 @@
 
         private Label label1;
         private Label label2;
-        private ComboBox comboBox1;
         private Label label3;
-        private ComboBox comboBox2;
         private Label label4;
         private NumericUpDown numericUpDown1;
         private Panel panel1;
@@ -255,10 +220,7 @@
         private Label label5;
         private TextBox textBox1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }

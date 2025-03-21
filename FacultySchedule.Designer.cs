@@ -45,11 +45,6 @@
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -180,16 +175,18 @@
             button1.TabIndex = 0;
             button1.Text = "Allocate";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" });
+            comboBox3.Items.AddRange(new object[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" });
             comboBox3.Location = new Point(304, 226);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(239, 23);
             comboBox3.TabIndex = 31;
             comboBox3.Text = "Select Day";
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
             // 
             // dateTimePicker1
             // 
@@ -198,6 +195,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(239, 23);
             dateTimePicker1.TabIndex = 32;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // dateTimePicker2
             // 
@@ -206,40 +204,16 @@
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(239, 23);
             dateTimePicker2.TabIndex = 33;
+            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
             dataGridView1.Location = new Point(344, 354);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(541, 150);
             dataGridView1.TabIndex = 34;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Faculty Course ID";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Room";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Day";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Start Time";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "End Time";
-            Column5.Name = "Column5";
             // 
             // FacultySchedule
             // 
@@ -262,6 +236,7 @@
             Controls.Add(label1);
             Name = "FacultySchedule";
             Text = "FacultySchedule";
+            Load += FacultySchedule_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -285,10 +260,5 @@
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
     }
 }

@@ -193,6 +193,7 @@
             Controls.Add(label1);
             Name = "Projects";
             Text = "s";
+            Load += Projects_Load_1;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

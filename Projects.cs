@@ -134,5 +134,10 @@ namespace DBS25P127
             adminDashboard.Show();
             this.Hide();
         }
+
+        private void Projects_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

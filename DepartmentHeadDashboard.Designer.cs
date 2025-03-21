@@ -40,11 +40,14 @@
             button4 = new Button();
             pictureBox5 = new PictureBox();
             button5 = new Button();
+            pictureBox6 = new PictureBox();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -83,7 +86,7 @@
             // 
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(302, 344);
+            pictureBox2.Location = new Point(151, 344);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(145, 134);
             pictureBox2.TabIndex = 15;
@@ -93,7 +96,7 @@
             // 
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox3.Location = new Point(522, 344);
+            pictureBox3.Location = new Point(414, 344);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(145, 134);
             pictureBox3.TabIndex = 16;
@@ -126,7 +129,7 @@
             // 
             button3.BackColor = SystemColors.ActiveCaptionText;
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(323, 484);
+            button3.Location = new Point(173, 484);
             button3.Name = "button3";
             button3.Size = new Size(105, 51);
             button3.TabIndex = 30;
@@ -137,9 +140,9 @@
             // 
             button4.BackColor = SystemColors.ActiveCaptionText;
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(549, 484);
+            button4.Location = new Point(434, 484);
             button4.Name = "button4";
-            button4.Size = new Size(93, 51);
+            button4.Size = new Size(106, 51);
             button4.TabIndex = 31;
             button4.Text = "Reports Management";
             button4.UseVisualStyleBackColor = false;
@@ -164,6 +167,28 @@
             button5.TabIndex = 33;
             button5.Text = "Faculty Schedule";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox6.Location = new Point(673, 347);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(145, 134);
+            pictureBox6.TabIndex = 34;
+            pictureBox6.TabStop = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = SystemColors.ActiveCaptionText;
+            button6.ForeColor = SystemColors.ButtonHighlight;
+            button6.Location = new Point(694, 487);
+            button6.Name = "button6";
+            button6.Size = new Size(106, 48);
+            button6.TabIndex = 35;
+            button6.Text = "Faculty Roles";
+            button6.UseVisualStyleBackColor = false;
             // 
             // DepartmentHeadDashboard
             // 
@@ -171,6 +196,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(993, 547);
+            Controls.Add(button6);
+            Controls.Add(pictureBox6);
             Controls.Add(button5);
             Controls.Add(pictureBox5);
             Controls.Add(button4);
@@ -190,6 +217,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
@@ -206,5 +234,7 @@
         private Button button4;
         private PictureBox pictureBox5;
         private Button button5;
+        private PictureBox pictureBox6;
+        private Button button6;
     }
 }

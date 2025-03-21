@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace DBS25P127
 {
@@ -70,6 +71,34 @@ namespace DBS25P127
             return true;
         }
 
+        // FACULTY COURSE SCHEDULE FUNCTIONS 
+
+        // Add Function 
+        public static bool AddFacultySchedule(int facultyCourseId, int roomId, string dayOfWeek, TimeSpan startTime, TimeSpan endTime)
+        {
+            string query = $@"
+        INSERT INTO faculty_course_schedule (faculty_course_id, room_id, day_of_week, start_time, end_time)
+        VALUES ({facultyCourseId}, {roomId}, '{dayOfWeek}', '{startTime}', '{endTime}')";
+
+            DatabaseHelper.Instance.Update(query);
+            return true;
+        }
+
+        // Update Function 
+        public static bool UpdateFacultySchedule(int scheduleId, int facultyCourseId, int roomId, string dayOfWeek, TimeSpan startTime, TimeSpan endTime)
+        {
+            string query = $@"
+        UPDATE faculty_course_schedule 
+        SET faculty_course_id = {facultyCourseId}, 
+            room_id = {roomId}, 
+            day_of_week = '{dayOfWeek}', 
+            start_time = '{startTime}', 
+            end_time = '{endTime}'
+        WHERE schedule_id = {scheduleId}";
+
+            DatabaseHelper.Instance.Update(query);
+            return true;
+        }
 
     }
 }

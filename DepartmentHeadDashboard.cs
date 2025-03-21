@@ -28,5 +28,12 @@ namespace DBS25P127
             this.Hide();
             courseAssignment.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FacultySchedule facultySchedule = new FacultySchedule();
+            facultySchedule.Show();
+            this.Hide();
+        }
     }
 }

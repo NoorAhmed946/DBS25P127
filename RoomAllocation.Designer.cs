@@ -35,21 +35,18 @@
             button2 = new Button();
             button1 = new Button();
             label2 = new Label();
-            comboBox1 = new ComboBox();
             label3 = new Label();
-            comboBox2 = new ComboBox();
             button4 = new Button();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
             label4 = new Label();
-            comboBox3 = new ComboBox();
             label5 = new Label();
-            textBox1 = new TextBox();
+            comboBox1 = new ComboBox();
+            comboBox3 = new ComboBox();
+            comboBox4 = new ComboBox();
+            numericUpDown1 = new NumericUpDown();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -109,6 +106,7 @@
             button1.TabIndex = 0;
             button1.Text = "Allocate";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -121,18 +119,6 @@
             label2.Text = "Faculty Name";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = SystemColors.MenuText;
-            comboBox1.ForeColor = SystemColors.ScrollBar;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Department Head", "Faculty Members", "Administrative Staff" });
-            comboBox1.Location = new Point(391, 175);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(260, 23);
-            comboBox1.TabIndex = 20;
-            comboBox1.Text = "Select Role";
-            // 
             // label3
             // 
             label3.BackColor = SystemColors.Desktop;
@@ -143,17 +129,6 @@
             label3.TabIndex = 21;
             label3.Text = "Rooms";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // comboBox2
-            // 
-            comboBox2.BackColor = SystemColors.MenuText;
-            comboBox2.ForeColor = SystemColors.ScrollBar;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(740, 175);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(260, 23);
-            comboBox2.TabIndex = 22;
-            comboBox2.Text = "Select Rooms";
             // 
             // button4
             // 
@@ -169,31 +144,11 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column4, Column3 });
             dataGridView1.Location = new Point(515, 342);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(445, 150);
             dataGridView1.TabIndex = 28;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Faculty";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "ClassRoom / Lab ";
-            Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Semester";
-            Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Reserved Hours";
-            Column3.Name = "Column3";
             // 
             // label4
             // 
@@ -206,18 +161,6 @@
             label4.Text = "Semester";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // comboBox3
-            // 
-            comboBox3.BackColor = SystemColors.MenuText;
-            comboBox3.ForeColor = SystemColors.ScrollBar;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Department Head", "Faculty Members", "Administrative Staff" });
-            comboBox3.Location = new Point(391, 261);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(260, 23);
-            comboBox3.TabIndex = 30;
-            comboBox3.Text = "Select Semester";
-            // 
             // label5
             // 
             label5.BackColor = SystemColors.Desktop;
@@ -229,12 +172,37 @@
             label5.Text = "Reserved Hours";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // comboBox1
             // 
-            textBox1.Location = new Point(740, 261);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(260, 23);
-            textBox1.TabIndex = 32;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(391, 175);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(260, 23);
+            comboBox1.TabIndex = 33;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(391, 261);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(260, 23);
+            comboBox3.TabIndex = 34;
+            // 
+            // comboBox4
+            // 
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(740, 175);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(260, 23);
+            comboBox4.TabIndex = 35;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(740, 261);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(192, 23);
+            numericUpDown1.TabIndex = 36;
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // RoomAllocation
             // 
@@ -243,24 +211,25 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1116, 573);
-            Controls.Add(textBox1);
-            Controls.Add(label5);
+            Controls.Add(numericUpDown1);
+            Controls.Add(comboBox4);
             Controls.Add(comboBox3);
+            Controls.Add(comboBox1);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(dataGridView1);
             Controls.Add(button4);
-            Controls.Add(comboBox2);
             Controls.Add(label3);
-            Controls.Add(comboBox1);
             Controls.Add(label2);
             Controls.Add(panel1);
             Controls.Add(label1);
             Name = "RoomAllocation";
             Text = "RoomAllocation";
+            Load += RoomAllocation_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -271,18 +240,14 @@
         private Button button2;
         private Button button1;
         private Label label2;
-        private ComboBox comboBox1;
         private Label label3;
-        private ComboBox comboBox2;
         private Button button4;
         private DataGridView dataGridView1;
         private Label label4;
-        private ComboBox comboBox3;
         private Label label5;
-        private TextBox textBox1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column3;
+        private ComboBox comboBox1;
+        private ComboBox comboBox3;
+        private ComboBox comboBox4;
+        private NumericUpDown numericUpDown1;
     }
 }
