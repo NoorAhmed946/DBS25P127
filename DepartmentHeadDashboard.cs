@@ -35,5 +35,19 @@ namespace DBS25P127
             facultySchedule.Show();
             this.Hide();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FacultyAdminRoles role = new FacultyAdminRoles();
+            role.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

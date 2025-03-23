@@ -31,6 +31,7 @@ namespace DBS25P127
         private void Faculty_Load(object sender, EventArgs e)
         {
             LoadFaculty();
+            loadDesignation();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -58,22 +59,21 @@ namespace DBS25P127
             designation = comboBox1.Text;
         }
 
-        private void LoadFaculty() // load data in the faculty
+        private void LoadFaculty() // load data in the faculty datagrid
         {
             using (MySqlConnection conn = DatabaseHelper.Instance.getConnection())
             {
                 string query = @"
                 SELECT 
-                faculty_id,
-                name,
-                email,
-                contact,
-                (SELECT value FROM lookup 
-                 WHERE lookup_id = f.designation_id AND category = 'Designation') AS designation,
-                 research_area,
-                 total_teaching_hours,
-                 user_id
-                 FROM faculty f  " ;
+            faculty_id,
+            name,
+            email,
+            contact,
+            designation_id,  -- Show the ID instead of designation name
+            research_area,
+            total_teaching_hours,
+            user_id
+        FROM faculty  ";
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
@@ -113,8 +113,36 @@ namespace DBS25P127
                 }
                 textBox5.Text = row.Cells["contact"].Value != DBNull.Value
                                 ? row.Cells["contact"].Value.ToString() : "";
-                comboBox1.Text = row.Cells["designation"].Value?.ToString() ?? ""; ;
+
+                if (row.Cells["designation_id"].Value != DBNull.Value)
+                {
+                    comboBox1.SelectedValue = Convert.ToInt32(row.Cells["designation_id"].Value);
+                }
+                else
+                {
+                    comboBox1.SelectedIndex = -1;
+                }
             }
+        }
+
+        // LOAD COMBO BOX FOR DESIGNATIONS 
+        private  void loadDesignation()
+        {
+            
+                using (MySqlConnection conn = DatabaseHelper.Instance.getConnection())
+                {
+                    string query = "SELECT lookup_id, value FROM lookup WHERE category = 'Designations'";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    comboBox1.DataSource = dt;
+                    comboBox1.DisplayMember = "value";      // what user sees
+                    comboBox1.ValueMember = "lookup_id";    // the actual ID you work with
+                    comboBox1.SelectedIndex = -1;
+                }
+
+            
         }
 
         private void button9_Click(object sender, EventArgs e) // Save Faculty

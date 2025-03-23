@@ -45,6 +45,7 @@
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
             dataGridView1 = new DataGridView();
+            button4 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -54,7 +55,7 @@
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(0, 0);
+            label1.Location = new Point(86, 0);
             label1.Name = "label1";
             label1.Size = new Size(906, 46);
             label1.TabIndex = 7;
@@ -215,12 +216,25 @@
             dataGridView1.Size = new Size(541, 150);
             dataGridView1.TabIndex = 34;
             // 
+            // button4
+            // 
+            button4.BackColor = SystemColors.Desktop;
+            button4.ForeColor = SystemColors.ButtonHighlight;
+            button4.Location = new Point(268, 12);
+            button4.Name = "button4";
+            button4.Size = new Size(53, 23);
+            button4.TabIndex = 35;
+            button4.Text = "Back";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // FacultySchedule
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(908, 529);
+            Controls.Add(button4);
             Controls.Add(dataGridView1);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
@@ -260,5 +274,6 @@
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private DataGridView dataGridView1;
+        private Button button4;
     }
 }

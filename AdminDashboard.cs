@@ -58,5 +58,12 @@ namespace DBS25P127
             this.Hide();
             faculty.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

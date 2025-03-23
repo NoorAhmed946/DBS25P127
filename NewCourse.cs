@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,58 @@ namespace DBS25P127
             string query = $"UPDATE courses SET course_name = '{name}', course_type = '{type}', credit_hours = {credit}, contact_hours = {contact} WHERE course_id = {id}";
             DatabaseHelper.Instance.Update(query);
             return true;
+        }
+
+        public static int GetFacultyAssignedHours(int facultyId) // Assigned 
+        {
+            int totalAssignedHours = 0;
+            string query = $@"
+            SELECT COALESCE(SUM(c.contact_hours), 0) AS total_assigned_hours
+            FROM faculty_courses fc
+            JOIN courses c ON fc.course_id = c.course_id
+            WHERE fc.faculty_id = {facultyId}";
+
+            using (var reader = DatabaseHelper.Instance.getData(query))
+            {
+                if (reader.Read())
+                {
+                    totalAssignedHours = Convert.ToInt32(reader["total_assigned_hours"]);
+                }
+            }
+
+            return totalAssignedHours;
+        }
+
+        public static int GetCourseContactHours(int courseId)
+        {
+            int contactHours = 0;
+            string query = $"SELECT contact_hours FROM courses WHERE course_id = {courseId}";
+
+            using (var reader = DatabaseHelper.Instance.getData(query))
+            {
+                if (reader.Read())
+                {
+                    contactHours = Convert.ToInt32(reader["contact_hours"]);
+                }
+            }
+
+            return contactHours;
+        }
+
+        public static int GetFacultyTeachingLimit(int facultyId)
+        {
+            int limit = 0;
+            string query = $"SELECT total_teaching_hours FROM faculty WHERE faculty_id = {facultyId}";
+
+            using (var reader = DatabaseHelper.Instance.getData(query))
+            {
+                if (reader.Read())
+                {
+                    limit = Convert.ToInt32(reader["total_teaching_hours"]);
+                }
+            }
+
+            return limit;
         }
 
     }

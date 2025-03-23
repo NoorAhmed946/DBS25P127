@@ -135,12 +135,24 @@ namespace DBS25P127
             int courseId = Convert.ToInt32(comboBox2.SelectedValue);
             int semesterId = Convert.ToInt32(comboBox3.SelectedValue);
 
-            bool success = facultyCourses.AddFacultyCourse(facultyId, courseId, semesterId);
+            int assignedHours = NewCourse.GetFacultyAssignedHours(facultyId);
+            int newCourseHours = NewCourse.GetCourseContactHours(courseId);
+            int teachingLimit = NewCourse.GetFacultyTeachingLimit(facultyId);
 
-            if (success)
-                MessageBox.Show("Assigned successfully!");
+
+            if (assignedHours + newCourseHours <= teachingLimit)
+            {
+                bool success = facultyCourses.AddFacultyCourse(facultyId, courseId, semesterId);
+
+                if (success)
+                    MessageBox.Show("Assigned successfully!");
+                else
+                    MessageBox.Show("Error occurred.");
+            }
             else
-                MessageBox.Show("Error occurred.");
+            {
+                MessageBox.Show("Faculty teaching load exceeded. Cannot assign this course.");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e) // Update

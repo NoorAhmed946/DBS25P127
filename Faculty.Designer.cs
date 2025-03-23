@@ -89,7 +89,6 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Lecturer", "Assistant Professor", "Associate Professor", "Professor" });
             comboBox1.Location = new Point(642, 255);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(233, 23);

@@ -35,7 +35,6 @@
             label4 = new Label();
             label5 = new Label();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
             textBox4 = new TextBox();
             button1 = new Button();
             label7 = new Label();
@@ -43,6 +42,7 @@
             label8 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
+            comboBox2 = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -53,7 +53,7 @@
             label1.Location = new Point(405, 118);
             label1.Name = "label1";
             label1.RightToLeft = RightToLeft.No;
-            label1.Size = new Size(62, 24);
+            label1.Size = new Size(62, 23);
             label1.TabIndex = 0;
             label1.Text = "Role";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -64,7 +64,6 @@
             comboBox1.BackColor = SystemColors.HighlightText;
             comboBox1.ForeColor = SystemColors.InfoText;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Department Head", "Faculty Members", "Administrative Staff" });
             comboBox1.Location = new Point(473, 118);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
@@ -111,13 +110,6 @@
             textBox2.Size = new Size(245, 23);
             textBox2.TabIndex = 8;
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(426, 229);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(245, 23);
-            textBox3.TabIndex = 9;
-            // 
             // textBox4
             // 
             textBox4.Location = new Point(426, 277);
@@ -144,14 +136,14 @@
             label7.Name = "label7";
             label7.Size = new Size(216, 39);
             label7.TabIndex = 13;
-            label7.Text = "SIGN IN ";
+            label7.Text = "SIGN UP";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // linkLabel1
             // 
             linkLabel1.BackColor = SystemColors.ActiveCaptionText;
             linkLabel1.LinkColor = Color.Silver;
-            linkLabel1.Location = new Point(441, 407);
+            linkLabel1.Location = new Point(405, 407);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(201, 34);
             linkLabel1.TabIndex = 14;
@@ -190,6 +182,16 @@
             label2.Text = "Confirm Password";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(426, 229);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(245, 23);
+            comboBox2.TabIndex = 18;
+            comboBox2.MouseHover += comboBox2_MouseHover;
+            // 
             // Signin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -197,6 +199,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(912, 450);
+            Controls.Add(comboBox2);
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(label8);
@@ -204,7 +207,6 @@
             Controls.Add(label7);
             Controls.Add(button1);
             Controls.Add(textBox4);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -226,7 +228,6 @@
         private Label label4;
         private Label label5;
         private TextBox textBox2;
-        private TextBox textBox3;
         private TextBox textBox4;
         private Button button1;
         private Label label7;
@@ -234,5 +235,6 @@
         private Label label8;
         private TextBox textBox1;
         private Label label2;
+        private ComboBox comboBox2;
     }
 }

@@ -34,6 +34,7 @@
             pictureBox2 = new PictureBox();
             button1 = new Button();
             button2 = new Button();
+            button8 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -81,6 +82,7 @@
             button1.TabIndex = 29;
             button1.Text = "Resource Request";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -92,6 +94,19 @@
             button2.TabIndex = 30;
             button2.Text = "Assigned Cources";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button8
+            // 
+            button8.BackColor = SystemColors.Desktop;
+            button8.ForeColor = SystemColors.ButtonHighlight;
+            button8.Location = new Point(12, 58);
+            button8.Name = "button8";
+            button8.Size = new Size(90, 38);
+            button8.TabIndex = 45;
+            button8.Text = "Logout";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // FacultyDashboard
             // 
@@ -99,6 +114,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(936, 450);
+            Controls.Add(button8);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(pictureBox2);
@@ -106,6 +122,7 @@
             Controls.Add(label1);
             Name = "FacultyDashboard";
             Text = "FacultyDashboard";
+            Load += FacultyDashboard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -118,5 +135,6 @@
         private PictureBox pictureBox2;
         private Button button1;
         private Button button2;
+        private Button button8;
     }
 }

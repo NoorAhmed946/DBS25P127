@@ -36,11 +36,10 @@
             label2 = new Label();
             linkLabel1 = new LinkLabel();
             label3 = new Label();
-            label4 = new Label();
-            comboBox1 = new ComboBox();
             linkLabel2 = new LinkLabel();
             label5 = new Label();
             panel1 = new Panel();
+            label4 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +47,7 @@
             // 
             textBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBox1.BackColor = Color.WhiteSmoke;
-            textBox1.Location = new Point(55, 121);
+            textBox1.Location = new Point(45, 91);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(263, 23);
             textBox1.TabIndex = 0;
@@ -57,10 +56,10 @@
             // 
             textBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBox2.BackColor = Color.WhiteSmoke;
-            textBox2.Location = new Point(54, 196);
+            textBox2.Location = new Point(44, 176);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(264, 23);
+            textBox2.Size = new Size(263, 23);
             textBox2.TabIndex = 1;
             // 
             // button1
@@ -68,7 +67,7 @@
             button1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             button1.BackColor = Color.Black;
             button1.ForeColor = SystemColors.AppWorkspace;
-            button1.Location = new Point(149, 225);
+            button1.Location = new Point(227, 215);
             button1.Name = "button1";
             button1.Size = new Size(81, 38);
             button1.TabIndex = 2;
@@ -79,21 +78,22 @@
             // label1
             // 
             label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            label1.BackColor = Color.Black;
+            label1.BackColor = SystemColors.ActiveCaptionText;
             label1.ForeColor = SystemColors.AppWorkspace;
-            label1.Location = new Point(55, 91);
+            label1.Location = new Point(45, 61);
             label1.Name = "label1";
             label1.Size = new Size(121, 27);
             label1.TabIndex = 3;
-            label1.Text = "Enter Login ID";
+            label1.Text = "Enter UserName ";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label2.BackColor = Color.Black;
             label2.ForeColor = SystemColors.AppWorkspace;
-            label2.Location = new Point(54, 167);
+            label2.Location = new Point(44, 147);
             label2.Name = "label2";
             label2.Size = new Size(122, 26);
             label2.TabIndex = 4;
@@ -105,12 +105,12 @@
             // 
             linkLabel1.BackColor = Color.Black;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(97, 313);
+            linkLabel1.Location = new Point(123, 331);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(184, 25);
             linkLabel1.TabIndex = 5;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "Don't Have a Account. SIGN-IN";
+            linkLabel1.Text = "Don't Have a Account. SIGN-UP";
             linkLabel1.TextAlign = ContentAlignment.MiddleCenter;
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
@@ -127,39 +127,14 @@
             label3.TextAlign = ContentAlignment.MiddleCenter;
             label3.Click += label3_Click;
             // 
-            // label4
-            // 
-            label4.BackColor = Color.Black;
-            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.AppWorkspace;
-            label4.Location = new Point(54, 12);
-            label4.Name = "label4";
-            label4.Size = new Size(65, 27);
-            label4.TabIndex = 7;
-            label4.Text = "Role : ";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = SystemColors.Desktop;
-            comboBox1.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox1.ForeColor = SystemColors.ScrollBar;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Department Head", "Faculty Members", "Administrative Staff" });
-            comboBox1.Location = new Point(54, 42);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 24);
-            comboBox1.TabIndex = 8;
-            comboBox1.Text = "Select Role";
-            // 
             // linkLabel2
             // 
             linkLabel2.BackColor = Color.Black;
             linkLabel2.ImageAlign = ContentAlignment.MiddleRight;
             linkLabel2.LinkColor = Color.White;
-            linkLabel2.Location = new Point(119, 277);
+            linkLabel2.Location = new Point(115, 278);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(141, 23);
+            linkLabel2.Size = new Size(125, 23);
             linkLabel2.TabIndex = 9;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Forgot Password";
@@ -183,7 +158,6 @@
             panel1.BackColor = Color.LightGray;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(linkLabel2);
             panel1.Controls.Add(linkLabel1);
             panel1.Controls.Add(label1);
@@ -193,8 +167,21 @@
             panel1.Controls.Add(textBox2);
             panel1.Location = new Point(270, 136);
             panel1.Name = "panel1";
-            panel1.Size = new Size(360, 346);
+            panel1.Size = new Size(360, 364);
             panel1.TabIndex = 11;
+            panel1.Paint += panel1_Paint;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.ForeColor = SystemColors.AppWorkspace;
+            label4.Location = new Point(34, 331);
+            label4.Name = "label4";
+            label4.Size = new Size(83, 25);
+            label4.TabIndex = 10;
+            label4.Text = "Faculty Only :";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Login
             // 
@@ -224,10 +211,9 @@
         private Label label2;
         private LinkLabel linkLabel1;
         private Label label3;
-        private Label label4;
-        private ComboBox comboBox1;
         private LinkLabel linkLabel2;
         private Label label5;
         private Panel panel1;
+        private Label label4;
     }
 }

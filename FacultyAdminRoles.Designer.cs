@@ -35,17 +35,13 @@
             button2 = new Button();
             button1 = new Button();
             button4 = new Button();
-            comboBox1 = new ComboBox();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             label4 = new Label();
+            comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -116,18 +112,7 @@
             button4.TabIndex = 16;
             button4.Text = "Back";
             button4.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = SystemColors.MenuText;
-            comboBox1.ForeColor = SystemColors.ScrollBar;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Department Head", "Faculty Members", "Administrative Staff" });
-            comboBox1.Location = new Point(408, 168);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(260, 23);
-            comboBox1.TabIndex = 17;
-            comboBox1.Text = "Select Role";
+            button4.Click += button4_Click;
             // 
             // label2
             // 
@@ -151,42 +136,15 @@
             label3.Text = "Role ";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(757, 168);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(223, 23);
-            textBox1.TabIndex = 20;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
             dataGridView1.Location = new Point(449, 317);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(445, 150);
             dataGridView1.TabIndex = 21;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Admin Role id";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Faculty ";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Role Name";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Semester";
-            Column4.Name = "Column4";
             // 
             // label4
             // 
@@ -199,16 +157,30 @@
             label4.Text = "Semester";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(408, 168);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(241, 23);
+            comboBox1.TabIndex = 23;
+            // 
             // comboBox2
             // 
-            comboBox2.BackColor = SystemColors.MenuText;
-            comboBox2.ForeColor = SystemColors.ScrollBar;
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(408, 234);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(260, 23);
-            comboBox2.TabIndex = 23;
-            comboBox2.Text = "Select Semester";
+            comboBox2.Size = new Size(241, 23);
+            comboBox2.TabIndex = 24;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "Committee Role", "Coordination Task" });
+            comboBox3.Location = new Point(757, 168);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(241, 23);
+            comboBox3.TabIndex = 25;
             // 
             // FacultyAdminRoles
             // 
@@ -217,22 +189,22 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1052, 479);
+            Controls.Add(comboBox3);
             Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
             Controls.Add(label4);
             Controls.Add(dataGridView1);
-            Controls.Add(textBox1);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(comboBox1);
             Controls.Add(button4);
             Controls.Add(panel1);
             Controls.Add(label1);
             Name = "FacultyAdminRoles";
             Text = "FacultyAdminRoles";
+            Load += FacultyAdminRoles_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -243,16 +215,12 @@
         private Button button2;
         private Button button1;
         private Button button4;
-        private ComboBox comboBox1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private Label label4;
+        private ComboBox comboBox1;
         private ComboBox comboBox2;
+        private ComboBox comboBox3;
     }
 }

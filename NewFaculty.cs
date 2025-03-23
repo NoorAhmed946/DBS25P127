@@ -100,5 +100,115 @@ namespace DBS25P127
             return true;
         }
 
+        // SCHEDULE OVERLAPPING CHECK   
+        public static bool IsScheduleOverlapping(int facultyId, string dayOfWeek, TimeSpan startTime, TimeSpan endTime)
+        {
+            string query = $@"
+            SELECT COUNT(*) AS overlap_count
+            FROM faculty_course_schedule fcs
+            JOIN faculty_courses fc ON fcs.faculty_course_id = fc.faculty_course_id
+            WHERE fc.faculty_id = {facultyId}
+              AND fcs.day_of_week = '{dayOfWeek}'
+              AND (
+                    fcs.start_time < '{endTime}' AND fcs.end_time > '{startTime}'
+                  )
+        ";
+
+            using (MySqlDataReader reader = DatabaseHelper.Instance.getData(query))
+            {
+                if (reader.Read())
+                {
+                    int overlapCount = Convert.ToInt32(reader["overlap_count"]);
+                    return overlapCount > 0;
+                }
+            }
+
+            return false;
+        }
+
+        // FACULTY COURSE ID 
+        public static int GetFacultyIdFromFacultyCourseId(int facultyCourseId)
+        {
+            string query = $"SELECT faculty_id FROM faculty_courses WHERE faculty_course_id = {facultyCourseId}";
+            using (var reader = DatabaseHelper.Instance.getData(query))
+            {
+                if (reader.Read())
+                {
+                    return Convert.ToInt32(reader["faculty_id"]);
+                }
+            }
+            return -1; 
+        }
+
+        // FACULTY ADMIN ROLES 
+
+        public static bool AddAdminRole(int facultyId, string roleName, int semesterId)
+        {
+            using (MySqlConnection conn = DatabaseHelper.Instance.getConnection())
+            {
+                string query = @"INSERT INTO faculty_admin_roles (faculty_id, role_name, semester_id)
+                         VALUES (@facultyId, @roleName, @semesterId)";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@facultyId", facultyId);
+                cmd.Parameters.AddWithValue("@roleName", roleName);
+                cmd.Parameters.AddWithValue("@semesterId", semesterId);
+
+                conn.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+                conn.Close();
+
+                return true;
+            }
+
+            // update function for faculty  roles 
+
+            //    public static bool UpdateAdminRole(int roleId, int facultyId, string roleName, int semesterId)
+            //{
+            //    using (MySqlConnection conn = DatabaseHelper.Instance.getConnection())
+            //    {
+            //        string query = @"UPDATE faculty_admin_roles
+            //                 SET faculty_id = @facultyId,
+            //                     role_name = @roleName,
+            //                     semester_id = @semesterId
+            //                 WHERE admin_role_id = @roleId";
+
+            //        MySqlCommand cmd = new MySqlCommand(query, conn);
+            //        cmd.Parameters.AddWithValue("@facultyId", facultyId);
+            //        cmd.Parameters.AddWithValue("@roleName", roleName);
+            //        cmd.Parameters.AddWithValue("@semesterId", semesterId);
+            //        cmd.Parameters.AddWithValue("@roleId", roleId);
+
+            //        conn.Open();
+            //        int rowsAffected = cmd.ExecuteNonQuery();
+            //        conn.Close();
+
+            //        return true;
+            //    }
+            //}
+
+            // DELETE FUNCTION 
+
+        //    public static bool DeleteAdminRole(int roleId)
+        //{
+        //    using (MySqlConnection conn = DatabaseHelper.Instance.getConnection())
+        //    {
+        //        string query = @"DELETE FROM faculty_admin_roles
+        //                 WHERE admin_role_id = @roleId";
+
+        //        MySqlCommand cmd = new MySqlCommand(query, conn);
+        //        cmd.Parameters.AddWithValue("@roleId", roleId);
+
+        //        conn.Open();
+        //        int rowsAffected = cmd.ExecuteNonQuery();
+        //        conn.Close();
+
+        //        return true;
+        //    }
+        //}
+
+
     }
+
+}
 }

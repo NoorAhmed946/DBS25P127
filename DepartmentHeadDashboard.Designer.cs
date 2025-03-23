@@ -42,6 +42,7 @@
             button5 = new Button();
             pictureBox6 = new PictureBox();
             button6 = new Button();
+            button8 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -189,6 +190,19 @@
             button6.TabIndex = 35;
             button6.Text = "Faculty Roles";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
+            // button8
+            // 
+            button8.BackColor = SystemColors.Desktop;
+            button8.ForeColor = SystemColors.ButtonHighlight;
+            button8.Location = new Point(12, 58);
+            button8.Name = "button8";
+            button8.Size = new Size(90, 38);
+            button8.TabIndex = 45;
+            button8.Text = "Logout";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // DepartmentHeadDashboard
             // 
@@ -196,6 +210,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(993, 547);
+            Controls.Add(button8);
             Controls.Add(button6);
             Controls.Add(pictureBox6);
             Controls.Add(button5);
@@ -236,5 +251,6 @@
         private Button button5;
         private PictureBox pictureBox6;
         private Button button6;
+        private Button button8;
     }
 }

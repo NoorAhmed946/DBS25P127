@@ -14,15 +14,21 @@ namespace DBS25P127
     public partial class Resource_Request : Form
     {
         public int quantity;
-        public string desc;
-        public Resource_Request()
+        private int FacId;
+        private int ConsumableID;
+        private int selectedId;
+
+        public Resource_Request(int FacultyId)
         {
             InitializeComponent();
+            FacId = FacultyId;
+            LoadData();
+            this.Load += Resource_Request_Load;
         }
 
         private void Resource_Request_Load(object sender, EventArgs e)
         {
-
+            LoadFacultyRequests();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -43,11 +49,9 @@ namespace DBS25P127
                 item.Fill(dataTable);
 
                 comboBox2.DataSource = dataTable;
-                comboBox2.DisplayMember = "item_nmae";
+                comboBox2.DisplayMember = "item_name";
                 comboBox2.ValueMember = "consumable_id";
                 comboBox2.SelectedIndex = -1;
-
-
             }
         }
 
@@ -56,11 +60,41 @@ namespace DBS25P127
             quantity = (int)numericUpDown1.Value;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            desc = textBox1.Text;
+            selectedId = Convert.ToInt32(comboBox2.SelectedValue);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool isSubmitted = RequestF.SubmitRequest(FacId, selectedId, quantity);
 
+            if (isSubmitted)
+            {
+                MessageBox.Show("Your Request have been Submitted");
+            }
+            else
+            {
+                MessageBox.Show("Your Request have not been Submitted . PLease Try Again.") ;
+            }
+        }
+
+        private void clear()
+        {
+            comboBox2.SelectedIndex = -1;
+            numericUpDown1.Value = 0;
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            clear(); 
+        }
+
+        private void LoadFacultyRequests()
+        {
+            DataTable table = RequestF.GetFacultyRequests(FacId);
+            dataGridView1.DataSource = table;
+        }
     }
 }

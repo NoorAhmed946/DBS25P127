@@ -22,7 +22,7 @@ namespace DBS25P127
             InitializeComponent();
             this.Load += FacultySchedule_Load; // safer load
             dataGridView1.CellClick += dataGridView1_CellClick;
-          
+
         }
 
         private void FacultySchedule_Load(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace DBS25P127
         {
             using (MySqlConnection con = DatabaseHelper.Instance.getConnection())
             {
-                //  ROOMS COMBOBOX FILL 
+                //  ROOMS COMBOBOX FILL
                 MySqlDataAdapter data = new MySqlDataAdapter("Select room_name, room_id From rooms", con);
                 DataTable dt = new DataTable();
                 data.Fill(dt);
@@ -131,19 +131,35 @@ namespace DBS25P127
         private void button1_Click(object sender, EventArgs e) // Add button 
         {
             int facultyCourseId = Convert.ToInt32(comboBox2.SelectedValue);
+            int facultyId = NewFaculty.GetFacultyIdFromFacultyCourseId(facultyCourseId);
             int roomId = Convert.ToInt32(comboBox1.SelectedValue);
             string dayOfWeek = comboBox3.SelectedItem.ToString();
             TimeSpan startTime = time1;
             TimeSpan endTime = time2;
 
-            // Add
-            bool added = NewFaculty.AddFacultySchedule(facultyCourseId, roomId, dayOfWeek, startTime, endTime);
-            if (added)
-                MessageBox.Show("Schedule added successfully!");
+
+            bool isOverLapping = NewFaculty.IsScheduleOverlapping(facultyId, dayOfWeek, startTime, endTime);
+
+            if (isOverLapping)
+            {
+                MessageBox.Show("Schedule overlaps with another class for this faculty!", "Conflict Detected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
-                MessageBox.Show("Failed to add schedule.");
+            {
+                bool added = NewFaculty.AddFacultySchedule(facultyCourseId, roomId, dayOfWeek, startTime, endTime);
+                if (added)
+                    MessageBox.Show("Schedule added successfully!");
+                else
+                    MessageBox.Show("Failed to add schedule.");
+            }
+
         }
 
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DepartmentHeadDashboard dp = new DepartmentHeadDashboard();
+            dp.Show();
+            this.Hide();
+        }
     }
 }

@@ -44,6 +44,7 @@
             pictureBox4 = new PictureBox();
             pictureBox6 = new PictureBox();
             pictureBox7 = new PictureBox();
+            button8 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -218,12 +219,25 @@
             pictureBox7.TabIndex = 43;
             pictureBox7.TabStop = false;
             // 
+            // button8
+            // 
+            button8.BackColor = SystemColors.Desktop;
+            button8.ForeColor = SystemColors.ButtonHighlight;
+            button8.Location = new Point(12, 48);
+            button8.Name = "button8";
+            button8.Size = new Size(90, 38);
+            button8.TabIndex = 44;
+            button8.Text = "Logout";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1014, 624);
+            Controls.Add(button8);
             Controls.Add(pictureBox7);
             Controls.Add(pictureBox6);
             Controls.Add(pictureBox4);
@@ -268,5 +282,6 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;
+        private Button button8;
     }
 }

@@ -34,13 +34,6 @@
             label5 = new Label();
             comboBox2 = new ComboBox();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
             label3 = new Label();
             textBox1 = new TextBox();
             label4 = new Label();
@@ -98,46 +91,11 @@
             // 
             dataGridView1.BackgroundColor = Color.LightGray;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
             dataGridView1.Location = new Point(108, 204);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(733, 150);
             dataGridView1.TabIndex = 31;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Request ID";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Faculty Name";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Request Type";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Item";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Quantity";
-            Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Status";
-            Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Date Requested";
-            Column7.Name = "Column7";
             // 
             // label3
             // 
@@ -188,6 +146,7 @@
             button1.TabIndex = 36;
             button1.Text = "Update Status";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // ReportManAdmin
             // 
@@ -208,6 +167,7 @@
             Controls.Add(label1);
             Name = "ReportManAdmin";
             Text = "ReportManAdmin";
+            Load += ReportManAdmin_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -220,13 +180,6 @@
         private Label label5;
         private ComboBox comboBox2;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
         private Label label3;
         private TextBox textBox1;
         private Label label4;
